@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //echo $_SESSION["LoggedId"] . " --- " . $_SESSION["LoggedNivel"] ;
 
         if ($_SESSION["LoggedNivel"] === '0'){
-            header("location: AdminEscolas.php");
+            header("location: AdminTableEscolas.php");
         }elseif ($_SESSION["LoggedNivel"] === '1'){
             header("location: ProfEnviar.php");
         }elseif ($_SESSION["LoggedNivel"] === '2'){

@@ -1,39 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <?php include("ConfigsDB.php"); ?>
-<html>
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caderneta Digital</title>
-    <?php include("ConfigsAssets.php") ?>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="assets/scss/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
 </head>
+<body class="bg-dark">
 
-<body style="background-image:url(&quot;assets/img/Background.jpg&quot;);">
-<form method="post" action="LoginFunc.php" id="form"
-      style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
-    <h1 id="head" style="color:rgb(193,166,83);">Caderneta Escolar</h1>
-    <div><img class="img-rounded img-responsive" src="assets/img/logo.png" data-aos="zoom-in" id="image"
-              style="width:auto;height:auto;"></div>
-    <div class="form-group"><input required name="username" class="form-control" type="text" autofocus="" id="formum"
-                                   placeholder="Username / Email"></div>
-    <div class="form-group"><input required name="password" class="form-control" type="password" id="formum2"
-                                   placeholder="Password"></div>
-    <?php
-    //Se fizer erro no login
-    if (isset($_SESSION["loginError"]) && $_SESSION["loginError"] === 'sim') {
-        echo "<p class='errortext'>Username / Email ou password errado!</p>";
-        session_destroy();
-    }
-    ?>
-    <button class="btn btn-default btn-lg" type="submit" id="butonas"
-            style="width:100%;height:100%;margin-bottom:10px;background-color:rgb(184,144,76);color:rgb(255,255,255);">
-        Login
-    </button>
 
-</form>
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form method="post" action="LoginFunc.php">
+                        <div class="form-group">
+                            <label>Username / Email address</label>
+                            <input name="username" type="text" class="form-control" placeholder="Username / Email address">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input  name="password" type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Lembrar-se de mim
+                            </label>
+                        </div>
+                        <?php
+                        //Se fizer erro no login
+                        if (isset($_SESSION["loginError"]) && $_SESSION["loginError"] === 'sim') {
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">
+                                            Password ou username errados!
+                                        </div>";
+                            session_destroy();
+                        }
+                        ?>
+                        <br>
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Login</button>
 
-<?php include("ConfigsAssets.php") ?>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
 </body>
-
 </html>
