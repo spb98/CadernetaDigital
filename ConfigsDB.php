@@ -4,7 +4,7 @@ session_start();
 //Define as variaveis para entrar na database
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'toor123');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'dtbpap');
 
 

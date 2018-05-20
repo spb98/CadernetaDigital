@@ -39,42 +39,8 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
-
-
 </head>
-<body
-    <?php if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimApagar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="deleteMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimEditar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="updateMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimAdicionar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="addMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'ERRO') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="errorMessage();"';
-    }
-
-    if (isset($_GET['delete'])) {
-        $delete_id = $_GET['delete'];
-
-        $sql = "DELETE FROM escolas WHERE IdEscolas = $delete_id";
-
-        if (mysqli_query($db, $sql)) {
-            //echo "Record deleted successfully";
-            $_SESSION['ActionTaken'] = 'SimApagar';
-        } else {
-            //echo "Error deleting record: " . mysqli_error($db);
-            $_SESSION['ActionTaken'] = 'ERRO';
-        }
-        header("location: AdminTableEscolas.php");
-    }
-    ?>
->
+<body>
 
 <!-- Left Panel -->
 
@@ -139,7 +105,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Escolas</li>
+                        <li class="active">Users</li>
                     </ol>
                 </div>
             </div>
@@ -153,43 +119,45 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Escolas</strong>
+                            <strong class="card-title">Users</strong>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="AdminTableEscolasEdit.php">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Designação</th>
-                                    <th>Localidade</th>
-                                    <th>Contacto</th>
-                                    <th>Email</th>
-                                    <th>Ação</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql = "SELECT * FROM escolas";
-                                $results = mysqli_query($db, $sql);
-
-                                $datarow = "";
-                                while ($row2 = mysqli_fetch_array($results)) {
-                                    $datarow = $datarow . "<tr>
-                                                        <td>$row2[1]</td>
-                                                        <td>$row2[2]</td>
-                                                        <td>$row2[3]</td>
-                                                        <td>$row2[4]</td>
-                                                        <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
-                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
-                                                        </tr>";
-                                }
-                                echo $datarow;
-                                ?>
-                                </tbody>
-                            </table>
-                            <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
-                                    class="btn btn-success"><em class="fa fa-plus"></em></button>
-                            </form>
+                                <div class="col-md-12">
+                                    <h1> Adicionar a informação do user:</h1>
+                                    <hr></hr>
+                                    <form method="post" action="AdminTableUsersAddFunc.php">
+                                        <div>
+                                            <div class="form-group"><label>Username:</label><input class="form-control"
+                                                                                                     type="text"
+                                                                                                     name="Username"></div>
+                                        </div>
+                                        <div>
+                                            <div class="form-group"><label>Password:</label><input class="form-control"
+                                                                                                type="text" autocomplete="off"
+                                                                                                required="" name="Password"></div>
+                                        </div>
+                                        <div>
+                                            <div class="form-group"><label>Email:</label><input class="form-control"
+                                                                                                     type="email"
+                                                                                                     name="Email"
+                                                                                                     autocomplete="off"
+                                                                                                     required=""></div>
+                                        </div>
+                                        <div>
+                                            <div class="form-group"><label>Nivel:</label><input class="form-control"
+                                                                                                   type="text"
+                                                                                                   name="Nivel"
+                                                                                                   required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div>
+                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
+                                    </form>
+                                    <a href="AdminTableUsers.php">
+                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
+                                    </a>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -204,7 +172,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 <!-- Right Panel -->
 
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 
 <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -230,43 +197,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
         $('#bootstrap-data-table-export').DataTable();
     });
 </script>
-
-<script>
-    function check(e) {
-
-        alertify.confirm("Aviso", "Tem a certeza que deseja apagar?",
-            function () {
-                //alert("You have clicked button id = "+e.id+" and button value = "+document.getElementById(e.id).value);
-                localStorage.setItem("IdToDelete", document.getElementById(e.id).value);
-                //alertify.success('Id --> ' +localStorage.getItem("IdToDelete"));
-
-                window.location.href = "AdminTableEscolas.php?delete=" + localStorage.getItem("IdToDelete");
-            },
-            function () {
-                //alertify.message('Teste de cancel');
-            });
-
-    }
-</script>
-<script type="text/javascript">
-    function deleteMessage() {
-        alertify.success('Informação apagada.');
-    }
-
-    function updateMessage() {
-        alertify.success('Informação atualizada.');
-    }
-
-    function addMessage() {
-        alertify.success('Informação adicionada.');
-    }
-
-    function errorMessage() {
-        alertify.error('Erro Ocurrido.');
-    }
-
-</script>
-
 
 
 </body>

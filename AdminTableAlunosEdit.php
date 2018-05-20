@@ -3,14 +3,24 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<?php include("ConfigsDB.php");
+<?php
 
-//Verifica se o user tem o login feito e credenciais
+include("ConfigsDB.php");
 
-if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
-    echo 'Erro de credenciais.';
-    header("location: index.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    //se for clickado em algum botão edit
+    if (isset($_POST['edit'])) {
+        $idnumber = mysqli_real_escape_string($db, $_POST['edit']);
+    } else {
+        header("location: AdminTableAlunos.php");
+    }
+
+    //Arranja tudo da tabela aluno
+    $sql = "SELECT * FROM alunos WHERE IdAlunos = '$idnumber'";
+    $results = mysqli_query($db, $sql);
+
+    $row2 = mysqli_fetch_array($results);
 }
 ?>
 
@@ -39,43 +49,8 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
-
-
 </head>
-<body
-    <?php if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimApagar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="deleteMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimEditar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="updateMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimAdicionar') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="addMessage();"';
-    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'ERRO') {
-        $_SESSION['ActionTaken'] = 'AcaoNula';
-        echo 'onload="errorMessage();"';
-    }
-
-    if (isset($_GET['delete'])) {
-        $delete_id = $_GET['delete'];
-
-        $sql = "DELETE FROM escolas WHERE IdEscolas = $delete_id";
-
-        if (mysqli_query($db, $sql)) {
-            //echo "Record deleted successfully";
-            $_SESSION['ActionTaken'] = 'SimApagar';
-        } else {
-            //echo "Error deleting record: " . mysqli_error($db);
-            $_SESSION['ActionTaken'] = 'ERRO';
-        }
-        header("location: AdminTableEscolas.php");
-    }
-    ?>
->
-
+<body>
 <!-- Left Panel -->
 
 <?php include("AdminTableSideBars.php");?>
@@ -139,7 +114,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Escolas</li>
+                        <li class="active">Alunos</li>
                     </ol>
                 </div>
             </div>
@@ -149,52 +124,75 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Escolas</strong>
+                    <h1> Editar a informação da alunos:</h1>
+                    <hr></hr>
+                    <form method="post" action="AdminTableAlunosEditFunc.php?edit=<?php echo $row2[0]; ?>">
+                        <div>
+                            <div class="form-group"><label>ID:</label><input disabled
+                                                                             value="<?php echo $row2[0]; ?>"
+                                                                             class="form-control" type="text"
+                                                                             name="id"></div>
                         </div>
-                        <div class="card-body">
-                            <form method="post" action="AdminTableEscolasEdit.php">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Designação</th>
-                                    <th>Localidade</th>
-                                    <th>Contacto</th>
-                                    <th>Email</th>
-                                    <th>Ação</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql = "SELECT * FROM escolas";
-                                $results = mysqli_query($db, $sql);
-
-                                $datarow = "";
-                                while ($row2 = mysqli_fetch_array($results)) {
-                                    $datarow = $datarow . "<tr>
-                                                        <td>$row2[1]</td>
-                                                        <td>$row2[2]</td>
-                                                        <td>$row2[3]</td>
-                                                        <td>$row2[4]</td>
-                                                        <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
-                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
-                                                        </tr>";
-                                }
-                                echo $datarow;
-                                ?>
-                                </tbody>
-                            </table>
-                            <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
-                                    class="btn btn-success"><em class="fa fa-plus"></em></button>
-                            </form>
+                        <div>
+                            <div class="form-group"><label>Id de Encarregados:</label><input value="<?php echo $row2[1]; ?>"
+                                                                                     class="form-control"
+                                                                                     type="text"
+                                                                                     name="IdEncarregados"></div>
                         </div>
-                    </div>
+                        <div>
+                            <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[2]; ?>"
+                                                                                class="form-control"
+                                                                                type="text" autocomplete="off"
+                                                                                required="" name="Nome"></div>
+                        </div>
+                        <div>
+                            <div class="form-group"><label>Morada:</label><input value="<?php echo $row2[3]; ?>"
+                                                                                     class="form-control"
+                                                                                     type="text"
+                                                                                     name="Morada"
+                                                                                     autocomplete="off"
+                                                                                     required=""></div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[4]; ?>"
+                                                                                   class="form-control"
+                                                                                   type="text" name="Localidade"
+                                                                                   autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>CC:</label><input value="<?php echo $row2[5]; ?>"
+                                                                           class="form-control"
+                                                                           type="text" name="CC"
+                                                                           autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>Sexo:</label><input value="<?php echo $row2[6]; ?>"
+                                                                           class="form-control"
+                                                                           type="text" name="Sexo"
+                                                                           autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>Data de Nascimento:</label><input value="<?php echo $row2[7]; ?>"
+                                                                           class="form-control"
+                                                                           type="date" name="DataNascimento"
+                                                                           autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 content-right">
+                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
+                    </form>
+                    <a href="AdminTableAlunos.php">
+                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
+                    </a>
+                    <br><br>
                 </div>
-
-
+            </div>
+        </div>
             </div>
         </div><!-- .animated -->
     </div><!-- .content -->
@@ -204,7 +202,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 <!-- Right Panel -->
 
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 
 <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -230,43 +227,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
         $('#bootstrap-data-table-export').DataTable();
     });
 </script>
-
-<script>
-    function check(e) {
-
-        alertify.confirm("Aviso", "Tem a certeza que deseja apagar?",
-            function () {
-                //alert("You have clicked button id = "+e.id+" and button value = "+document.getElementById(e.id).value);
-                localStorage.setItem("IdToDelete", document.getElementById(e.id).value);
-                //alertify.success('Id --> ' +localStorage.getItem("IdToDelete"));
-
-                window.location.href = "AdminTableEscolas.php?delete=" + localStorage.getItem("IdToDelete");
-            },
-            function () {
-                //alertify.message('Teste de cancel');
-            });
-
-    }
-</script>
-<script type="text/javascript">
-    function deleteMessage() {
-        alertify.success('Informação apagada.');
-    }
-
-    function updateMessage() {
-        alertify.success('Informação atualizada.');
-    }
-
-    function addMessage() {
-        alertify.success('Informação adicionada.');
-    }
-
-    function errorMessage() {
-        alertify.error('Erro Ocurrido.');
-    }
-
-</script>
-
 
 
 </body>
