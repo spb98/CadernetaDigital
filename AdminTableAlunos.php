@@ -157,6 +157,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     <th>CC</th>
                                     <th>Sexo</th>
                                     <th>Data de Nascimento</th>
+									<th>Foto</th>
                                     <th>Ação</th>
                                 </tr>
                                 </thead>
@@ -167,6 +168,9 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
                                 $datarow = "";
                                 while ($row2 = mysqli_fetch_array($results)) {
+									
+									//echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
+									$foto = '<img src="data:image/jpeg;base64,'.base64_encode( $row2['foto'] ).'"/>';
                                     $datarow = $datarow . "<tr>
                                                         <td>$row2[2]</td>
                                                         <td>$row2[3]</td>
@@ -174,6 +178,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                                         <td>$row2[5]</td>
                                                         <td>$row2[6]</td>
                                                         <td>$row2[7]</td>
+														<td>$foto</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";
