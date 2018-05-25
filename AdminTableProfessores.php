@@ -62,7 +62,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
-        $sql = "DELETE FROM escolas WHERE IdEscolas = $delete_id";
+        $sql = "DELETE FROM professores WHERE IdProfessor = $delete_id";
 
         if (mysqli_query($db, $sql)) {
             //echo "Record deleted successfully";
@@ -71,7 +71,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             //echo "Error deleting record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';
         }
-        header("location: AdminTableEscolas.php");
+        header("location: AdminTableProfessores.php");
     }
     ?>
 >
@@ -139,7 +139,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Escolas</li>
+                        <li class="active">Professores</li>
                     </ol>
                 </div>
             </div>
@@ -153,32 +153,26 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Escolas</strong>
+                            <strong class="card-title">Professores</strong>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="AdminTableEscolasEdit.php">
+                            <form method="post" action="AdminTableProfessoresEdit.php">
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Designação</th>
-                                    <th>Localidade</th>
-                                    <th>Contacto</th>
-                                    <th>Email</th>
+                                    <th>Nome</th>
                                     <th>Ação</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                $sql = "SELECT * FROM escolas";
+                                $sql = "SELECT * FROM professores";
                                 $results = mysqli_query($db, $sql);
 
                                 $datarow = "";
                                 while ($row2 = mysqli_fetch_array($results)) {
                                     $datarow = $datarow . "<tr>
-                                                        <td>$row2[1]</td>
                                                         <td>$row2[2]</td>
-                                                        <td>$row2[3]</td>
-                                                        <td>$row2[4]</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";
@@ -187,7 +181,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                 ?>
                                 </tbody>
                             </table>
-                            <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
+                            <button type="button" onclick="location.href = 'AdminTableProfessoresAdd.php';"
                                     class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
@@ -240,7 +234,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 localStorage.setItem("IdToDelete", document.getElementById(e.id).value);
                 //alertify.success('Id --> ' +localStorage.getItem("IdToDelete"));
 
-                window.location.href = "AdminTableEscolas.php?delete=" + localStorage.getItem("IdToDelete");
+                window.location.href = "AdminTableProfessores.php?delete=" + localStorage.getItem("IdToDelete");
             },
             function () {
                 //alertify.message('Teste de cancel');

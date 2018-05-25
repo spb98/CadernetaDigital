@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['edit'])) {
         $idnumber = mysqli_real_escape_string($db, $_POST['edit']);
     } else {
-        header("location: AdminTableEscolas.php");
+        header("location: AdminTableRecados.php");
     }
 
-    //Arranja tudo da tabela escola
-    $sql = "SELECT * FROM escolas WHERE IdEscolas = '$idnumber'";
+    //Arranja tudo da tabela Recados
+    $sql = "SELECT * FROM recados WHERE IdRecados = '$idnumber'";
     $results = mysqli_query($db, $sql);
 
     $row2 = mysqli_fetch_array($results);
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Escolas</li>
+                        <li class="active">Recados</li>
                     </ol>
                 </div>
             </div>
@@ -125,9 +125,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="animated fadeIn">
             <div class="row">
                 <div class="col-md-12">
-                    <h1> Editar a informação da escola:</h1>
+                    <h1> Editar a informação do recado:</h1>
                     <hr></hr>
-                    <form method="post" action="AdminTableEscolasEditFunc.php?edit=<?php echo $row2[0]; ?>">
+                    <form method="post" action="AdminTableRecadosEditFunc.php?edit=<?php echo $row2[0]; ?>">
                         <div>
                             <div class="form-group"><label>ID:</label><input disabled
                                                                              value="<?php echo $row2[0]; ?>"
@@ -135,29 +135,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                              name="id"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Designação:</label><input value="<?php echo $row2[1]; ?>"
+                            <div class="form-group"><label>Id de Professor:</label><input value="<?php echo $row2[1]; ?>"
                                                                                      class="form-control"
                                                                                      type="text"
-                                                                                     name="designacao"></div>
+                                                                                     name="IdProfessores"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Email:</label><input value="<?php echo $row2[4]; ?>"
+                            <div class="form-group"><label>Id da Escola:</label><input value="<?php echo $row2[2]; ?>"
                                                                                 class="form-control"
-                                                                                type="email" autocomplete="off"
-                                                                                required="" name="email"></div>
+                                                                                type="text" autocomplete="off"
+                                                                                required="" name="IdEscolas"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[2]; ?>"
+                            <div class="form-group"><label>Id doEncarregado:</label><input value="<?php echo $row2[3]; ?>"
                                                                                      class="form-control"
                                                                                      type="text"
-                                                                                     name="localidade"
+                                                                                     name="IdEncarregados"
                                                                                      autocomplete="off"
                                                                                      required=""></div>
                         </div>
                         <div >
-                            <div class="form-group"><label>Contacto:</label><input value="<?php echo $row2[3]; ?>"
+                            <div class="form-group"><label>Mensagem:</label><input value="<?php echo $row2[4]; ?>"
                                                                                    class="form-control"
-                                                                                   type="text" name="contacto"
+                                                                                   type="text" name="Mensagem"
+                                                                                   autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>DataEnvio:</label><input value="<?php echo $row2[5]; ?>"
+                                                                                   class="form-control"
+                                                                                   type="date" name="DataEnvio"
+                                                                                   autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>Datade Confirmação:</label><input value="<?php echo $row2[6]; ?>"
+                                                                                   class="form-control"
+                                                                                   type="date" name="DataConfirmacao"
+                                                                                   autocomplete="off">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>Se foi Lido:</label><input value="<?php echo $row2[7]; ?>"
+                                                                                   class="form-control"
+                                                                                   type="text" name="Lido"
                                                                                    autocomplete="off" required="">
                             </div>
                         </div>
@@ -165,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-12 content-right">
                                 <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
                     </form>
-                    <a href="AdminTableEscolas.php">
+                    <a href="AdminTableRecados.php">
                         <button class="btn btn-danger form-btn" type="button">Cancelar</button>
                     </a>
                     <br><br>

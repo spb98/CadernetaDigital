@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_SESSION["LoggedNivel"] === '0'){
             header("location: AdminTableEscolas.php");
         }elseif ($_SESSION["LoggedNivel"] === '1'){
-            header("location: ProfEnviar.php");
+            header("location: ProfOverview.php");
         }elseif ($_SESSION["LoggedNivel"] === '2'){
             header("location: EncEnviados.php");
         }else{
