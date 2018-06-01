@@ -10,7 +10,7 @@
 
 //Verifica se o user tem o login feito e credenciais
 
-if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
+if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
     echo 'Erro de credenciais.';
     header("location: index.php");
 
@@ -45,6 +45,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
 
+
 </head>
 <body
     <?php if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimApagar') {
@@ -64,7 +65,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
-        $sql = "DELETE FROM alunos WHERE IdAlunos = $delete_id";
+        $sql = "DELETE FROM recados WHERE IdRecados = $delete_id";
 
         if (mysqli_query($db, $sql)) {
             //echo "Record deleted successfully";
@@ -73,14 +74,14 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             //echo "Error deleting record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';
         }
-        header("location: AdminTableAlunos.php");
+        header("location: ProfRecadosEnviados.php");
     }
     ?>
 >
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php"); ?>
+<?php include("ProfSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -141,7 +142,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Alunos</li>
+                        <li class="active">Recados</li>
                     </ol>
                 </div>
             </div>
@@ -151,44 +152,50 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Alunos</strong>
+                            <strong class="card-title">Recados</strong>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="AdminTableAlunosEdit.php">
+                            <form method="post" action="ProfRecadosEnviadosEdit.php">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th>Nome</th>
-                                        <th>Morada</th>
-                                        <th>Localidade</th>
-                                        <th>CC</th>
-                                        <th>Sexo</th>
-                                        <th>Data de Nascimento</th>
-                                        <th>Foto</th>
+                                        <th>Mensagem</th>
+                                        <th>Data de Envio</th>
+                                        <th>Estado</th>
                                         <th>Ação</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $sql = "SELECT * FROM alunos";
+                                    $ID = $_SESSION["LoggedId"];
+
+                                    $sql = "SELECT * FROM professores WHERE IdUsers = $ID ";
+                                    $results = mysqli_query($db, $sql);
+                                    $NecessarioID = mysqli_fetch_array($results);
+
+                                    //echo 'Id do proff:' . $NecessarioID['IdProfessor'];
+                                    $_SESSION['IDProf'] = $NecessarioID['IdProfessor'];
+
+                                    $sql = "SELECT * FROM recados WHERE IdProfessores = '$NecessarioID[IdProfessor]'";
                                     $results = mysqli_query($db, $sql);
 
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
-                                        //echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
-                                        $foto = '<img src="data:image/jpeg;base64,' . base64_encode($row2['foto']) . '"/>';
+
+                                        if ($row2[7] === 'n') {
+                                            $row2[7] = 'Ainda não foi lido.';
+                                            $row2[6] = '';
+                                        } elseif ($row2[7] === 's') {
+                                            $row2[7] = 'Lido no dia: ' . $row2[6];
+                                        }
+
                                         $datarow = $datarow . "<tr>
-                                                        <td>$row2[2]</td>
-                                                        <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
                                                         <td>$row2[5]</td>
-                                                        <td>$row2[6]</td>
                                                         <td>$row2[7]</td>
-                                                        <td style='height: 10%; width: 10%;'>$foto</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";
@@ -197,8 +204,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     ?>
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="location.href = 'AdminTableAlunosAdd.php';"
-                                        class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
                     </div>
@@ -212,6 +217,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 </div><!-- /#right-panel -->
 
+<!-- Right Panel -->
 
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
 
@@ -249,7 +255,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 localStorage.setItem("IdToDelete", document.getElementById(e.id).value);
                 //alertify.success('Id --> ' +localStorage.getItem("IdToDelete"));
 
-                window.location.href = "AdminTableAlunos.php?delete=" + localStorage.getItem("IdToDelete");
+                window.location.href = "ProfRecadosEnviados.php?delete=" + localStorage.getItem("IdToDelete");
             },
             function () {
                 //alertify.message('Teste de cancel');
@@ -276,6 +282,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 </script>
 
+
 </body>
 </html>
-

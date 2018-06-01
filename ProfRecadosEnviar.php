@@ -6,14 +6,24 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<?php include("ConfigsDB.php");
+<?php
 
-//Verifica se o user tem o login feito e credenciais
+include("ConfigsDB.php");
 
-if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
-    echo 'Erro de credenciais.';
-    header("location: index.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    //se for clickado em algum botão edit
+    if (isset($_POST['edit'])) {
+        $idnumber = mysqli_real_escape_string($db, $_POST['edit']);
+    } else {
+        header("location: AdminTableRecados.php");
+    }
+
+    //Arranja tudo da tabela Recados
+    $sql = "SELECT * FROM recados WHERE IdRecados = '$idnumber'";
+    $results = mysqli_query($db, $sql);
+
+    $row2 = mysqli_fetch_array($results);
 }
 ?>
 
@@ -44,10 +54,9 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 </head>
 <body>
-
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php"); ?>
+<?php include("ProfSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -108,7 +117,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                     <ol class="breadcrumb text-right">
                         <li><a href="#">Dashboard</a></li>
                         <li><a href="#">Table</a></li>
-                        <li class="active">Alunos</li>
+                        <li class="active">Recados</li>
                     </ol>
                 </div>
             </div>
@@ -118,90 +127,85 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Alunos</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="col-md-12">
-                                <h1> Adicionar a informação do aluno:</h1>
-                                <hr></hr>
-                                <form method="post" action="AdminTableAlunosAddFunc.php" enctype="multipart/form-data">
-                                    <div>
-                                        <div class="form-group"><label>Id Encarregado:</label><input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="IdEncarregados"></div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Nome:</label><input class="form-control"
-                                                                                           type="text"
-                                                                                           autocomplete="off"
-                                                                                           required="" name="Nome">
+                    <form method="post" action="ProfRecadosEnviar.php?edit=<?php
+                    $temp1 = $_SESSION['IDProf'];
+                    echo $temp1 ?>">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header"><strong>Enviar</strong>
+                                    <small>Recado</small>
+                                </div>
+                                <div class="card-body card-block">
+                                    <div class="row form-group">
+                                        <div class="col col-md-12"><label for="select" class=" form-control-label">Escola:</label>
+                                        </div>
+                                        <div name="selectEscola" id="selectEscola" class="col-12 col-md-4">
+                                            <select class="form-control">
+                                                <option value="">Selecione a escola...</option>
+                                                <?php
+
+                                                $idprofessor = $_SESSION['IDProf'];
+
+                                                $sql = "SELECT * FROM escolas";
+                                                $results = mysqli_query($db, $sql);
+
+                                                $datarow = "";
+
+                                                while ($row2 = mysqli_fetch_array($results)) {
+                                                    $datarow = $datarow . "<option value='$row2[0]' >$row2[1]</option>";
+                                                }
+                                                echo $datarow;
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="form-group"><label>Morada:</label><input class="form-control"
-                                                                                             type="text"
-                                                                                             name="Morada"
-                                                                                             autocomplete="off"
-                                                                                             required=""></div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Localidade:</label><input class="form-control"
-                                                                                                 type="text"
-                                                                                                 name="Localidade"
-                                                                                                 required="">
+                                    <div class="row form-group">
+                                        <div class="col col-md-12"><label for="select" class=" form-control-label">Turma:</label>
+                                        </div>
+                                        <div name="selectTurma" id="selectTurma" class="col-12 col-md-3">
+                                            <select class="form-control">
+                                                <option value="">Selecione a turma...</option>
+                                                <?php
+
+                                                $idprofessor = $_SESSION['IDProf'];
+
+                                                $sql = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor'";
+                                                $results = mysqli_query($db, $sql);
+
+                                                $datarow = "";
+
+                                                while ($row2 = mysqli_fetch_array($results)) {
+                                                    $datarow = $datarow . "<option value='$row2[0]' >$row2[3]º$row2[4]</option>";
+                                                }
+                                                echo $datarow;
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="form-group"><label>CC:</label><input class="form-control"
-                                                                                         type="text"
-                                                                                         name="CC"
-                                                                                         required="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Sexo:</label><input class="form-control"
-                                                                                           type="text"
-                                                                                           name="Sexo"
-                                                                                           required="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div ><label for="file-input" class=" form-control-label">Foto:</label></div>
-                                        <div ><input type="file" id="file-input"
-                                                                            name="foto" class="form-control-file">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div>
-                                        <div class="form-group"><label>Data de Nascimento:</label><input
-                                                    class="form-control"
-                                                    type="date"
-                                                    name="DataNascimento"
-                                                    required="">
-                                        </div>
+                                    <div class="form-group"><label
+                                                class=" form-control-label">Mensagem:</label><textarea
+                                                name="textarea-input" id="textarea-input" rows="9" maxlength="5000"
+                                                placeholder="Vim por este meio..." class="form-control"></textarea>
                                     </div>
                                     <div class="form-row">
-                                        <div>
+                                        <div class="col-md-12 content-right">
                                             <button class="btn btn-primary form-btn" type="submit">Fazer Alterações
                                             </button>
-                                </form>
-                                <a href="AdminTableAlunos.php">
-                                    <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
+                    <a href="AdminTableRecados.php">
+                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
+                    </a>
                 </div>
-
-
+                <br><br>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+        </div>
+    </div>
+</div>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

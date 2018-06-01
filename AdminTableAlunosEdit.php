@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-md-12">
                     <h1> Editar a informação da alunos:</h1>
                     <hr></hr>
-                    <form method="post" action="AdminTableAlunosEditFunc.php?edit=<?php echo $row2[0]; ?>">
+                    <form method="post" action="AdminTableAlunosEditFunc.php?edit=<?php echo $row2[0]; ?>" enctype="multipart/form-data">
                         <div>
                             <div class="form-group"><label>ID:</label><input disabled
                                                                              value="<?php echo $row2[0]; ?>"

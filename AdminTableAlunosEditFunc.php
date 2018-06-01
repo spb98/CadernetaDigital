@@ -16,9 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cc = mysqli_real_escape_string($db, $_POST['CC']);
     $sexo = mysqli_real_escape_string($db, $_POST['Sexo']);
     $datanascimento = mysqli_real_escape_string($db, $_POST['DataNascimento']);
-    $foto = mysqli_real_escape_string($db, file_get_contents( $_POST['foto']));
+    //$foto = mysqli_real_escape_string($db, file_get_contents( $_POST['foto']['tmp_name']));
 
-    $sql = "UPDATE alunos SET IdEncarregados ='$idencarregados', Nome='$nome', Morada='$morada', Localidade='$localidade', CC='$cc', Sexo='$sexo', DataNascimento='$datanascimento', foto = '$foto'
+    //verificar as propriedades da imagem
+    $check = getimagesize($_FILES["foto"]["tmp_name"]);
+    if($check !== false){
+        $image = $_FILES['foto']['tmp_name'];
+        $foto2 = addslashes(file_get_contents($image));
+    }
+    //imagem vai ser armazenada
+
+    $sql = "UPDATE alunos SET IdEncarregados ='$idencarregados', Nome='$nome', Morada='$morada', Localidade='$localidade', CC='$cc', Sexo='$sexo', DataNascimento='$datanascimento', foto = '$foto2'
             WHERE IdAlunos ='$id'";
 
     if (mysqli_query($db, $sql)) {
