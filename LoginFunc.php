@@ -31,14 +31,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_SESSION["LoggedNivel"] === '0'){
             header("location: AdminTableEscolas.php");
         }elseif ($_SESSION["LoggedNivel"] === '1'){
-            header("location: ProfEnviar.php");
+            header("location: ProfRecadosEnviados.php");
         }elseif ($_SESSION["LoggedNivel"] === '2'){
             header("location: EncEnviados.php");
         }else{
             echo 'Erro na database, contactar criador do site.';
         }
 
-    } else {-
+    } else {
         //Declara que há erros e vai para o index novamente
         $_SESSION["loginError"] = 'sim';
         unset($_SESSION['LoggedId']);

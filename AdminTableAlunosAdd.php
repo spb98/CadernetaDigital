@@ -1,7 +1,10 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <?php include("ConfigsDB.php");
 
@@ -44,7 +47,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -122,63 +125,75 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             <strong class="card-title">Alunos</strong>
                         </div>
                         <div class="card-body">
-                                <div class="col-md-12">
-                                    <h1> Adicionar a informação do aluno:</h1>
-                                    <hr></hr>
-                                    <form method="post" action="AdminTableAlunosAddFunc.php">
-                                        <div>
-                                            <div class="form-group"><label>Id Encarregado:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="IdEncarregados"></div>
+                            <div class="col-md-12">
+                                <h1> Adicionar a informação do aluno:</h1>
+                                <hr></hr>
+                                <form method="post" action="AdminTableAlunosAddFunc.php" enctype="multipart/form-data">
+                                    <div>
+                                        <div class="form-group"><label>Id Encarregado:</label><input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="IdEncarregados"></div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group"><label>Nome:</label><input class="form-control"
+                                                                                           type="text"
+                                                                                           autocomplete="off"
+                                                                                           required="" name="Nome">
                                         </div>
-                                        <div>
-                                            <div class="form-group"><label>Nome:</label><input class="form-control"
-                                                                                                type="text" autocomplete="off"
-                                                                                                required="" name="Nome"></div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group"><label>Morada:</label><input class="form-control"
+                                                                                             type="text"
+                                                                                             name="Morada"
+                                                                                             autocomplete="off"
+                                                                                             required=""></div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group"><label>Localidade:</label><input class="form-control"
+                                                                                                 type="text"
+                                                                                                 name="Localidade"
+                                                                                                 required="">
                                         </div>
-                                        <div>
-                                            <div class="form-group"><label>Morada:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="Morada"
-                                                                                                     autocomplete="off"
-                                                                                                     required=""></div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group"><label>CC:</label><input class="form-control"
+                                                                                         type="text"
+                                                                                         name="CC"
+                                                                                         required="">
                                         </div>
-                                        <div>
-                                            <div class="form-group"><label>Localidade:</label><input class="form-control"
-                                                                                                   type="text"
-                                                                                                   name="Localidade"
-                                                                                                   required="">
-                                            </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group"><label>Sexo:</label><input class="form-control"
+                                                                                           type="text"
+                                                                                           name="Sexo"
+                                                                                           required="">
                                         </div>
-                                        <div>
-                                            <div class="form-group"><label>CC:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="CC"
-                                                                                                     required="">
-                                            </div>
+                                    </div>
+                                    <div>
+                                        <div ><label for="file-input" class=" form-control-label">Foto:</label></div>
+                                        <div ><input type="file" id="file-input"
+                                                                            name="foto" class="form-control-file">
                                         </div>
-                                        <div>
-                                            <div class="form-group"><label>Sexo:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="Sexo"
-                                                                                                     required="">
-                                            </div>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <div class="form-group"><label>Data de Nascimento:</label><input
+                                                    class="form-control"
+                                                    type="date"
+                                                    name="DataNascimento"
+                                                    required="">
                                         </div>
+                                    </div>
+                                    <div class="form-row">
                                         <div>
-                                            <div class="form-group"><label>Data de Nascimento:</label><input class="form-control"
-                                                                                                     type="date"
-                                                                                                     name="DataNascimento"
-                                                                                                     required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div>
-                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                                    </form>
-                                    <a href="AdminTableAlunos.php">
-                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                    </a>
-                                </div>
+                                            <button class="btn btn-primary form-btn" type="submit">Fazer Alterações
+                                            </button>
+                                </form>
+                                <a href="AdminTableAlunos.php">
+                                    <button class="btn btn-danger form-btn" type="button">Cancelar</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

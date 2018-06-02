@@ -1,7 +1,10 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <?php
 
@@ -53,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -127,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-md-12">
                     <h1> Editar a informação da alunos:</h1>
                     <hr></hr>
-                    <form method="post" action="AdminTableAlunosEditFunc.php?edit=<?php echo $row2[0]; ?>">
+                    <form method="post" action="AdminTableAlunosEditFunc.php?edit=<?php echo $row2[0]; ?>" enctype="multipart/form-data">
                         <div>
                             <div class="form-group"><label>ID:</label><input disabled
                                                                              value="<?php echo $row2[0]; ?>"
@@ -135,53 +138,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                              name="id"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Id de Encarregados:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="IdEncarregados"></div>
+                            <div class="form-group"><label>Id de Encarregados:</label><input
+                                        value="<?php echo $row2[1]; ?>"
+                                        class="form-control"
+                                        type="text"
+                                        name="IdEncarregados"></div>
                         </div>
                         <div>
                             <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="text" autocomplete="off"
-                                                                                required="" name="Nome"></div>
+                                                                               class="form-control"
+                                                                               type="text" autocomplete="off"
+                                                                               required="" name="Nome"></div>
                         </div>
                         <div>
                             <div class="form-group"><label>Morada:</label><input value="<?php echo $row2[3]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="Morada"
-                                                                                     autocomplete="off"
-                                                                                     required=""></div>
+                                                                                 class="form-control"
+                                                                                 type="text"
+                                                                                 name="Morada"
+                                                                                 autocomplete="off"
+                                                                                 required=""></div>
                         </div>
-                        <div >
+                        <div>
                             <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[4]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Localidade"
-                                                                                   autocomplete="off" required="">
+                                                                                     class="form-control"
+                                                                                     type="text" name="Localidade"
+                                                                                     autocomplete="off" required="">
                             </div>
                         </div>
-                        <div >
+                        <div>
                             <div class="form-group"><label>CC:</label><input value="<?php echo $row2[5]; ?>"
-                                                                           class="form-control"
-                                                                           type="text" name="CC"
-                                                                           autocomplete="off" required="">
+                                                                             class="form-control"
+                                                                             type="text" name="CC"
+                                                                             autocomplete="off" required="">
                             </div>
                         </div>
-                        <div >
+                        <div>
                             <div class="form-group"><label>Sexo:</label><input value="<?php echo $row2[6]; ?>"
-                                                                           class="form-control"
-                                                                           type="text" name="Sexo"
-                                                                           autocomplete="off" required="">
+                                                                               class="form-control"
+                                                                               type="text" name="Sexo"
+                                                                               autocomplete="off" required="">
                             </div>
                         </div>
-                        <div >
-                            <div class="form-group"><label>Data de Nascimento:</label><input value="<?php echo $row2[7]; ?>"
-                                                                           class="form-control"
-                                                                           type="date" name="DataNascimento"
-                                                                           autocomplete="off" required="">
+                        <div>
+                            <div class="form-group"><label>Data de Nascimento:</label><input
+                                        value="<?php echo $row2[7]; ?>"
+                                        class="form-control"
+                                        type="date" name="DataNascimento"
+                                        autocomplete="off" required="">
                             </div>
                         </div>
+                        <div>
+                            <div><label>Foto: </label><br><?php
+                                $foto = '<img style=\'height: 10%; width: 10%;\' src="data:image/jpeg;base64,' . base64_encode($row2['foto']) . '"/>';
+                                echo $foto;
+                                ?>
+                            </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div ><input type="file" id="file-input"
+                                         name="foto" class="form-control-file">
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-row">
                             <div class="col-md-12 content-right">
                                 <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
@@ -193,9 +212,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </div>
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+    </div>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->
