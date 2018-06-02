@@ -109,7 +109,7 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="41" />
     <option name="y" value="31" />
     <option name="width" value="1386" />
@@ -167,16 +167,15 @@
       <workItem from="1527260914249" duration="2258000" />
       <workItem from="1527789174790" duration="261000" />
       <workItem from="1527926413742" duration="10951000" />
-      <workItem from="1527942170386" duration="1525000" />
+      <workItem from="1527942170386" duration="1756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15461000" />
+    <option name="totallyTimeSpent" value="15692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="9" />
