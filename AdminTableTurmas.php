@@ -9,7 +9,7 @@
 
 if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     echo 'Erro de credenciais.';
-    header("location: index.php");
+    header("location: LogoutFunc.php");
 
 }
 ?>

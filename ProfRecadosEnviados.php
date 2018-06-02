@@ -1,10 +1,7 @@
 <!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <?php include("ConfigsDB.php");
 
@@ -12,7 +9,7 @@
 
 if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
     echo 'Erro de credenciais.';
-    header("location: index.php");
+    header("location: LogoutFunc.php");
 
 }
 ?>

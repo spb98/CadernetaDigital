@@ -1,14 +1,17 @@
 <!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<?php
+<?php include("ConfigsDB.php");
 
-include("ConfigsDB.php");
+//Verifica se o user tem o login feito e credenciais
+
+if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
+    echo 'Erro de credenciais.';
+    header("location: LogoutFunc.php");
+
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

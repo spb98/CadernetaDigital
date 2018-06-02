@@ -1,3 +1,8 @@
+>Versão Beta 2.31
+> - Conteudos:
+>   - Polido parte do código
+>	- Removido e adicionado ficheiros necessários
+
 >Versão Beta 2.30
 > - Conteudos:
 >   - Continuado a estrutura dos professores
@@ -20,7 +25,6 @@
 >   - Adicionado a database
 >   - Atualizado a database
 
-=======
 
 >Versão Beta 1.00
 > - Conteudos:

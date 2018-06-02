@@ -16,10 +16,10 @@
             <ul class="nav navbar-nav">
                 <h3 class="menu-title">Menu Principal</h3><!-- /.menu-title -->
                 <li class="">
-                    <a href="ProfRecadosEnviar.php"> <i class="menu-icon fa fa-dashboard"></i>Enviar Recados</a>
+                    <a href="ProfRecadosEnviar.php"> <i class="menu-icon fa  fa-envelope"></i>Enviar Recados</a>
                 </li>
                 <li class="">
-                    <a href="ProfRecadosEnviados.php"> <i class="menu-icon fa fa-dashboard"></i>Recados Enviados</a>
+                    <a href="ProfRecadosEnviados.php"> <i class="menu-icon fa fa-archive"></i>Recados Enviados</a>
                 </li>
         </div><!-- /.navbar-collapse -->
     </nav>

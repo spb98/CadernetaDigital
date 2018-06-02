@@ -1,29 +1,16 @@
 <!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<?php
+<?php include("ConfigsDB.php");
 
-include("ConfigsDB.php");
+//Verifica se o user tem o login feito e credenciais
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
+    echo 'Erro de credenciais.';
+    header("location: LogoutFunc.php");
 
-    //se for clickado em algum botão edit
-    if (isset($_POST['edit'])) {
-        $idnumber = mysqli_real_escape_string($db, $_POST['edit']);
-    } else {
-        header("location: AdminTableRecados.php");
-    }
-
-    //Arranja tudo da tabela Recados
-    $sql = "SELECT * FROM recados WHERE IdRecados = '$idnumber'";
-    $results = mysqli_query($db, $sql);
-
-    $row2 = mysqli_fetch_array($results);
 }
 ?>
 
@@ -223,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                     <div class="form-group"><label
                                                 class=" form-control-label">Mensagem:</label><textarea
-                                                name="textarea-input" id="textarea-input" rows="9" maxlength="5000"
+                                                required name="textarea-input" id="textarea-input" rows="9" maxlength="5000"
                                                 placeholder="Vim por este meio..." class="form-control"></textarea>
                                     </div>
                                     <div class="form-row">
@@ -278,8 +265,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     $(function () {
         $('#schoolselector').change(function () {
+            //Esconde os outros selects
             $('.turmas').hide();
+            //mostra o correto
             $('#' + 'escola' + $(this).val()).show();
+            //faz reset ás checkboxes
+            $('input:checkbox').removeAttr('checked');
+            //esconde-as
+            $('.alunos').hide();
+            //reseta selects
+            $('#classselector option').prop('selected', function() {
+                return this.defaultSelected;
+            });
         });
     });
 
@@ -287,6 +284,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $('#classselector').change(function () {
             $('.alunos').hide();
             $('#' + 'alunos' + $(this).val()).show();
+            $('input:checkbox').removeAttr('checked');
         });
     });
 

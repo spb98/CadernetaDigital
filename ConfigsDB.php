@@ -25,5 +25,4 @@ $_SESSION["LoggedId"]           --> Id do user que fez login
 $_SESSION["LoggedUsername"]     --> Username do user que fez login
 $_SESSION["LoggedNivel"]        --> Nivel do user que fez login
 $_SESSION['ActionTaken']        --> Ação feita pelo user (eliminar/editar/adicionar/etc) ('AcaoNula' === Nada para fazer)
-$_SESSION['AdminCurrentTable']  --> Tabela a ser utilizada atualmente por um administrador.
 */

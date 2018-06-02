@@ -9,7 +9,7 @@
 
 if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     echo 'Erro de credenciais.';
-    header("location: index.php");
+    header("location: LogoutFunc.php");
 
 }
 ?>
@@ -78,7 +78,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -157,24 +157,24 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                         </div>
                         <div class="card-body">
                             <form method="post" action="AdminTableEscolasEdit.php">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Designação</th>
-                                    <th>Localidade</th>
-                                    <th>Contacto</th>
-                                    <th>Email</th>
-                                    <th>Ação</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql = "SELECT * FROM escolas";
-                                $results = mysqli_query($db, $sql);
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Designação</th>
+                                        <th>Localidade</th>
+                                        <th>Contacto</th>
+                                        <th>Email</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM escolas";
+                                    $results = mysqli_query($db, $sql);
 
-                                $datarow = "";
-                                while ($row2 = mysqli_fetch_array($results)) {
-                                    $datarow = $datarow . "<tr>
+                                    $datarow = "";
+                                    while ($row2 = mysqli_fetch_array($results)) {
+                                        $datarow = $datarow . "<tr>
                                                         <td>$row2[1]</td>
                                                         <td>$row2[2]</td>
                                                         <td>$row2[3]</td>
@@ -182,13 +182,13 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";
-                                }
-                                echo $datarow;
-                                ?>
-                                </tbody>
-                            </table>
-                            <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
-                                    class="btn btn-success"><em class="fa fa-plus"></em></button>
+                                    }
+                                    echo $datarow;
+                                    ?>
+                                    </tbody>
+                                </table>
+                                <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
+                                        class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
                     </div>
@@ -266,7 +266,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     }
 
 </script>
-
 
 
 </body>
