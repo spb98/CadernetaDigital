@@ -1,3 +1,8 @@
+>Versão Beta 2.4
+> - Conteudos:
+>   - Arranjado a página de admin (ver tabelas)
+>	- Feito a passagem de dados no envio de recados (ainda não insere)
+
 >Versão Beta 2.31
 > - Conteudos:
 >   - Polido parte do código

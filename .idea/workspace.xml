@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/ProfRecadosEnviarFunc.php" line="20" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a10507-5e67-46c6-986e-2fb84735ffe7" name="Default" comment="" />
+    <list default="true" id="08a10507-5e67-46c6-986e-2fb84735ffe7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminTableAlunos.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminTableAlunos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigsDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigsDB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfRecadosEnviar.php" beforeDir="false" afterPath="$PROJECT_DIR$/ProfRecadosEnviar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,38 +33,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProfRecadosEnviar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProfRecadosEnviar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="212" column="56" selection-start-line="212" selection-start-column="56" selection-end-line="212" selection-end-column="56" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1527979771579" expanded="true" signature="5605:5626" ph="SELECT * FRO... escolas" />
-                <marker date="1527979771579" expanded="true" signature="6391:6412" ph="SELECT * FRO... escolas" />
-                <marker date="1527979771579" expanded="true" signature="6682:6694" ph="..." />
-                <marker date="1527979771579" expanded="true" signature="7311:7392" ph="SELECT * FRO... turmas" />
-                <marker date="1527979771579" expanded="true" signature="7927:8008" ph="SELECT * FRO... turmas" />
-                <marker date="1527979771579" expanded="true" signature="8231:8278" ph="SELECT * FRO... alunos" />
-                <marker date="1527979771579" expanded="true" signature="9128:9575" ph="..." />
-                <marker date="1527979771579" expanded="true" signature="9245:9512" ph="..." />
-                <marker date="1527979771579" expanded="true" signature="10099:10148" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfSideBars.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ProfSideBars.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -65,6 +43,8 @@
       <find>selector</find>
       <find>turmas</find>
       <find>index.php</find>
+      <find>&lt;form</find>
+      <find>required</find>
     </findStrings>
     <replaceStrings>
       <replace>LogoutFunc.php</replace>
@@ -72,15 +52,14 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/AdminTableAlunosEditFunc.php" />
         <option value="$PROJECT_DIR$/AdminTableAlunosAddFunc.php" />
-        <option value="$PROJECT_DIR$/ConfigsDB.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/AdminTableAlunos.php" />
         <option value="$PROJECT_DIR$/AdminTableAlunosAdd.php" />
         <option value="$PROJECT_DIR$/AdminTableAlunosEdit.php" />
         <option value="$PROJECT_DIR$/AdminTableEncarregados.php" />
@@ -106,8 +85,11 @@
         <option value="$PROJECT_DIR$/AdminTableUsersEdit.php" />
         <option value="$PROJECT_DIR$/ProfOverview.php" />
         <option value="$PROJECT_DIR$/ProfRecadosEnviados.php" />
-        <option value="$PROJECT_DIR$/ProfRecadosEnviar.php" />
         <option value="$PROJECT_DIR$/ProfSideBars.php" />
+        <option value="$PROJECT_DIR$/ConfigsDB.php" />
+        <option value="$PROJECT_DIR$/ProfRecadosEnviar.php" />
+        <option value="$PROJECT_DIR$/AdminTableAlunos.php" />
+        <option value="$PROJECT_DIR$/ProfRecadosEnviarFunc.php" />
       </list>
     </option>
   </component>
@@ -137,8 +119,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="SiteV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SiteV2" type="462c0819:PsiDirectoryNode" />
+              <item name="SitePap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SitePap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,7 +134,12 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="C:/xampp/php/php.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\5751\PhpstormProjects\SitePap" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,57 +169,58 @@
       <workItem from="1527942170386" duration="1756000" />
       <workItem from="1527976277965" duration="1240000" />
       <workItem from="1527977756087" duration="2246000" />
+      <workItem from="1528206100229" duration="3648000" />
+      <workItem from="1528281821658" duration="4831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19178000" />
+    <option name="totallyTimeSpent" value="27657000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3290938" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49914238" visible="true" weight="0.2730711" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32933104" />
-      <window_info id="Structure" order="1" sideWeight="0.50085765" side_tool="true" weight="0.2655068" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25787964" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2579425" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32991454" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info id="Structure" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="0" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +230,37 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviarFunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3604">
+          <caret line="212" column="20" lean-forward="true" selection-start-line="212" selection-start-column="20" selection-end-line="212" selection-end-column="20" />
+          <folding>
+            <marker date="1528282454714" expanded="true" signature="20:33" ph="..." />
+            <marker date="1528282454714" expanded="true" signature="5519:5540" ph="SELECT * FRO... escolas" />
+            <marker date="1528282454714" expanded="true" signature="6304:6325" ph="SELECT * FRO... escolas" />
+            <marker date="1528282454714" expanded="true" signature="6595:6607" ph="..." />
+            <marker date="1528282454714" expanded="true" signature="7232:7313" ph="SELECT * FRO... turmas" />
+            <marker date="1528282454714" expanded="true" signature="7848:7929" ph="SELECT * FRO... turmas" />
+            <marker date="1528282454714" expanded="true" signature="8152:8199" ph="SELECT * FRO... alunos" />
+            <marker date="1528282454714" expanded="true" signature="8402:8414" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfSideBars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableProfessoresAddFunc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -260,13 +279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="19" column="121" selection-start-line="19" selection-start-column="121" selection-end-line="19" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdminTableTurmasAddFunc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="11" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -305,9 +317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableEncarregadosAddFunc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -322,9 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminTableEscolasEditOriginal.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableEstabelecimentoAddFunc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -336,13 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
           <caret line="422" column="22" selection-start-line="422" selection-start-column="22" selection-end-line="422" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -401,9 +400,6 @@
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdminTableEscolasEditFunc.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableEstabelecimento.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -475,20 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminTableTurmas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdminTableTurmasAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableTurmasEdit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -517,30 +499,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConfigsDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="121" selection-start-line="26" selection-start-column="121" selection-end-line="26" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoginFunc.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProfOverview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfOverview.php" />
     <entry file="file://$PROJECT_DIR$/AdminTableEscolasEdit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -548,21 +507,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
+    <entry file="file://$PROJECT_DIR$/ProfSideBars.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConfigsDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminTableTurmas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <marker date="1528205909643" expanded="true" signature="2858:2896" ph="DELETE FROM recados... " />
+            <marker date="1528205909643" expanded="true" signature="6857:6899" ph="SELECT * FRO... professores" />
+            <marker date="1528205909643" expanded="true" signature="7284:7356" ph="SELECT * FRO... recados" />
+            <marker date="1528205909643" expanded="true" signature="8030:8711" ph="..." />
+            <marker date="1528205909643" expanded="true" signature="8313:8649" ph="..." />
+            <marker date="1528205909643" expanded="true" signature="8390:8644" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LoginFunc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminTableAlunos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        <state relative-caret-position="-459">
+          <caret line="186" column="73" lean-forward="true" selection-start-line="186" selection-start-column="73" selection-end-line="186" selection-end-column="73" />
           <folding>
-            <marker date="1527978771303" expanded="true" signature="2857:2893" ph="DELETE FROM alunos... " />
-            <marker date="1527978771303" expanded="true" signature="7008:7028" ph="SELECT * FRO... alunos" />
-            <marker date="1527978771303" expanded="true" signature="7552:8559" ph="..." />
-            <marker date="1527978771303" expanded="false" signature="8065:8089" ph="..." />
-            <marker date="1527978771303" expanded="true" signature="8161:8497" ph="..." />
-            <marker date="1527978771303" expanded="true" signature="8238:8492" ph="..." />
+            <marker date="1528284494627" expanded="true" signature="2857:2893" ph="DELETE FROM alunos... " />
+            <marker date="1528284494627" expanded="true" signature="7008:7028" ph="SELECT * FRO... alunos" />
+            <marker date="1528284494627" expanded="true" signature="7552:8559" ph="..." />
+            <marker date="1528284494627" expanded="false" signature="8065:8089" ph="..." />
+            <marker date="1528284494627" expanded="true" signature="8161:8497" ph="..." />
+            <marker date="1528284494627" expanded="true" signature="8238:8492" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminTableTurmasAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviarFunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="133" column="83" lean-forward="true" selection-start-line="133" selection-start-column="63" selection-end-line="133" selection-end-column="83" />
+          <folding>
+            <marker date="1528282454714" expanded="true" signature="20:33" ph="..." />
+            <marker date="1528282454714" expanded="true" signature="5519:5540" ph="SELECT * FRO... escolas" />
+            <marker date="1528282454714" expanded="true" signature="6304:6325" ph="SELECT * FRO... escolas" />
+            <marker date="1528282454714" expanded="true" signature="6595:6607" ph="..." />
+            <marker date="1528282454714" expanded="true" signature="7232:7313" ph="SELECT * FRO... turmas" />
+            <marker date="1528282454714" expanded="true" signature="7848:7929" ph="SELECT * FRO... turmas" />
+            <marker date="1528282454714" expanded="true" signature="8152:8199" ph="SELECT * FRO... alunos" />
+            <marker date="1528282454714" expanded="true" signature="8402:8414" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminTableTurmasAddFunc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="23" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -570,32 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProfRecadosEnviar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="212" column="56" selection-start-line="212" selection-start-column="56" selection-end-line="212" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1527979771579" expanded="true" signature="5605:5626" ph="SELECT * FRO... escolas" />
-            <marker date="1527979771579" expanded="true" signature="6391:6412" ph="SELECT * FRO... escolas" />
-            <marker date="1527979771579" expanded="true" signature="6682:6694" ph="..." />
-            <marker date="1527979771579" expanded="true" signature="7311:7392" ph="SELECT * FRO... turmas" />
-            <marker date="1527979771579" expanded="true" signature="7927:8008" ph="SELECT * FRO... turmas" />
-            <marker date="1527979771579" expanded="true" signature="8231:8278" ph="SELECT * FRO... alunos" />
-            <marker date="1527979771579" expanded="true" signature="9128:9575" ph="..." />
-            <marker date="1527979771579" expanded="true" signature="9245:9512" ph="..." />
-            <marker date="1527979771579" expanded="true" signature="10099:10148" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProfSideBars.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
         </state>
       </provider>
     </entry>

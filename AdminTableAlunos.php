@@ -179,12 +179,12 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                         //echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
                                         $foto = '<img src="data:image/jpeg;base64,' . base64_encode($row2['foto']) . '"/>';
                                         $datarow = $datarow . "<tr>
-                                                        <td>$row2[2]</td>
                                                         <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
                                                         <td>$row2[5]</td>
                                                         <td>$row2[6]</td>
                                                         <td>$row2[7]</td>
+                                                        <td>$row2[8]</td>
                                                         <td style='height: 10%; width: 10%;'>$foto</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>

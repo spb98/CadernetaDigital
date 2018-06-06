@@ -116,9 +116,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
         <div class="animated fadeIn">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" action="ProfRecadosEnviar.php?edit=<?php
-                    $temp1 = $_SESSION['IDProf'];
-                    echo $temp1 ?>">
+                    <form method="post" action="ProfRecadosEnviarFunc.php">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header"><strong>Enviar</strong>
@@ -129,8 +127,8 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                         <div class="col col-md-12"><label for="select" class=" form-control-label">Escola:</label>
                                         </div>
                                         <div class="col-12 col-md-5">
-                                            <select id="schoolselector" required class="form-control">
-                                                <option value="">Selecione a escola...</option>
+                                            <select name="escola" id="schoolselector" class="form-control">
+                                                <option  value="">Selecione a escola...</option>
                                                 <?php
 
                                                 $idprofessor = $_SESSION['IDProf'];
@@ -142,7 +140,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                                 while ($row2 = mysqli_fetch_array($results)) {
                                                     $datarow = $datarow . "<option value='$row2[0]' >$row2[1]</option>";
-
                                                 }
                                                 echo $datarow;
                                                 ?>
@@ -160,7 +157,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                         echo "<div class=\"col col-md-12\"><label for=\"select\" class=\" form-control-label\">Turma:</label>";
                                         echo "</div>";
                                         echo "<div class=\"col-12 col-md-3\">";
-                                        echo "<select id='classselector' required class=\"form-control\">";
+                                        echo "<select name=\"turma[]\" id='classselector' class=\"form-control\">";
                                         echo "<option value=\"\">Selecione a turma...</option>";
 
                                         $idprofessor = $_SESSION['IDProf'];
@@ -192,7 +189,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                                 echo "<div class=\"checkbox\">";
                                                 echo "<label for=\"checkbox$row3[0]\" class=\"form-check-label \">";
-                                                echo "<input type=\"checkbox\" id=\"checkbox$row3[0]\" name=\"checkbox$row3[0]\" value=\"aluno$row3[0]\" class=\"form-check-input\">$row3[3] <br> $foto";
+                                                echo "<input type=\"checkbox\" id=\"checkbox$row3[0]\" name=\"check_list[]\" value=\"$row3[0]\" class=\"form-check-input\">$row3[3] <br> $foto";
                                                 echo "</label>";
                                                 echo "</div>";
                                             }
@@ -200,12 +197,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                             echo " </div>";
                                             echo " </div>";
                                         }
-
-
                                     }
-
-
-
                                     ?>
 
                                     <div class="form-group"><label
