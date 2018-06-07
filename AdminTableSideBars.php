@@ -14,21 +14,32 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <h3 class="menu-title">Administração</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown show">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="true"> <i class="menu-icon fa fa-table"></i>Tabelas</a>
-                    <ul class="sub-menu children dropdown-menu show">
-                        <li><i class="fa fa-university"></i><a href="AdminTableAlunos.php">Alunos</a></li>
-                        <li><i class="fa fa-group"></i><a href="AdminTableEncarregados.php">Encarregados</a></li>
-                        <li><i class="fa fa-building"></i><a href="AdminTableEscolas.php">Escolas</a></li>
-                        <li><i class="fa fa-hospital-o"></i><a href="AdminTableEstabelecimento.php">Estabelecimento</a></li>
-                        <li><i class="fa fa-id-card-o"></i><a href="AdminTableProfessores.php">Professores</a></li>
-                        <li><i class="fa fa-file-text-o"></i><a href="AdminTableRecados.php">Recados</a></li>
-                        <li><i class="fa fa-calendar-o"></i><a href="AdminTableTurmas.php">Turmas</a></li>
-                        <li><i class="fa fa-user"></i><a href="AdminTableUsers.php"->Users</a></li>
-                    </ul>
-                </li>
+                <ul class="nav navbar-nav">
+                    <h3 class="menu-title">Administração</h3><!-- /.menu-title -->
+                    <li>
+                        <a href="AdminTableAlunos.php"> <i class="menu-icon fa fa-university"></i>Alunos</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableEncarregados.php"> <i class="menu-icon fa fa-group"></i>Encarregados</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableEscolas.php"> <i class="menu-icon fa fa-building"></i>Escolas</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableEstabelecimento.php"> <i class="menu-icon fa fa-hospital-o"></i>Estabelecimento</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableProfessores.php"> <i class="menu-icon fa fa-id-card-o"></i>Professores</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableRecados.php"> <i class="menu-icon fa fa-file-text-o"></i>Recados</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableTurmas.php"> <i class="menu-icon fa fa-calendar-o"></i>Turmas</a>
+                    </li>
+                    <li>
+                        <a href="AdminTableUsers.php"> <i class="menu-icon fa fa-user"></i>Users</a>
+                    </li>
         </div><!-- /.navbar-collapse -->
     </nav>
 </aside>

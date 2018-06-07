@@ -1,3 +1,29 @@
+# Erros | Em falta
+
+Abaixo encontra-se a lista de erros ou características em falta no projeto.
+
+>Em falta:
+  - Encarregados marcarem recados como lidos.
+  - Encarregados terem a tabela 100% funcional.
+  - Professores terem a tabela 100% funcional.
+  - Administradores terem a tabela 100% funcional.
+  
+>Erros:
+  - Adicionar fotos nos administradores.
+  - Traduções.
+  - Tabelas não são responsive se tiverem mais de 4 colunas.
+
+# Patchnotes
+
+Abaixo encontra-se a lista de mudaças feitas no projeto.
+
+>Versão Beta 2.5
+> - Conteudos:
+>   - Atualizado os icons
+>	- Removido imagens desnecessárias
+>	- Envio de recados concluido
+>	- Começado os encarregados de educação.
+
 >Versão Beta 2.4
 > - Conteudos:
 >   - Arranjado a página de admin (ver tabelas)
