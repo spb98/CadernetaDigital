@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //Arranja tudo da tabela aluno
-    $sql = "SELECT * FROM alunos WHERE IdAlunos = '$idnumber'";
+    $sql = "SELECT * FROM alunos WHERE IdAluno = '$idnumber'";
     $results = mysqli_query($db, $sql);
 
     $row2 = mysqli_fetch_array($results);
@@ -74,27 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Alunos</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -116,13 +95,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         name="IdEncarregados"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[2]; ?>"
+                            <div class="form-group"><label>Id da Turma:</label><input value="<?php echo $row2[2]; ?>"
                                                                                class="form-control"
                                                                                type="text" autocomplete="off"
                                                                                required="" name="Nome"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Morada:</label><input value="<?php echo $row2[3]; ?>"
+                            <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[3]; ?>"
+                                                                               class="form-control"
+                                                                               type="text" autocomplete="off"
+                                                                               required="" name="Nome"></div>
+                        </div>
+                        <div>
+                            <div class="form-group"><label>Morada:</label><input value="<?php echo $row2[4]; ?>"
                                                                                  class="form-control"
                                                                                  type="text"
                                                                                  name="Morada"
@@ -130,21 +115,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                                  required=""></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[4]; ?>"
+                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[5]; ?>"
                                                                                      class="form-control"
                                                                                      type="text" name="Localidade"
                                                                                      autocomplete="off" required="">
                             </div>
                         </div>
                         <div>
-                            <div class="form-group"><label>CC:</label><input value="<?php echo $row2[5]; ?>"
+                            <div class="form-group"><label>CC:</label><input value="<?php echo $row2[6]; ?>"
                                                                              class="form-control"
                                                                              type="text" name="CC"
                                                                              autocomplete="off" required="">
                             </div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Sexo:</label><input value="<?php echo $row2[6]; ?>"
+                            <div class="form-group"><label>Sexo:</label><input value="<?php echo $row2[7]; ?>"
                                                                                class="form-control"
                                                                                type="text" name="Sexo"
                                                                                autocomplete="off" required="">
@@ -152,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div>
                             <div class="form-group"><label>Data de Nascimento:</label><input
-                                        value="<?php echo $row2[7]; ?>"
+                                        value="<?php echo $row2[8]; ?>"
                                         class="form-control"
                                         type="date" name="DataNascimento"
                                         autocomplete="off" required="">
@@ -160,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div>
                             <div><label>Foto: </label><br><?php
-                                $foto = '<img style=\'height: 10%; width: 10%;\' src="data:image/jpeg;base64,' . base64_encode($row2['foto']) . '"/>';
+                                $foto = '<img style=\'height: 10%; width: 10%;\' src="data:image/jpeg;base64,' . base64_encode($row2['Foto']) . '"/>';
                                 echo $foto;
                                 ?>
                             </div>

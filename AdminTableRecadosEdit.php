@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //Arranja tudo da tabela Recados
-    $sql = "SELECT * FROM recados WHERE IdRecados = '$idnumber'";
+    $sql = "SELECT * FROM recados WHERE IdRecado = '$idnumber'";
     $results = mysqli_query($db, $sql);
 
     $row2 = mysqli_fetch_array($results);
@@ -74,27 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Recados</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -121,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                                 required="" name="IdEscolas"></div>
                         </div>
                         <div>
-                            <div class="form-group"><label>Id doEncarregado:</label><input value="<?php echo $row2[3]; ?>"
+                            <div class="form-group"><label>Id do Encarregado:</label><input value="<?php echo $row2[3]; ?>"
                                                                                      class="form-control"
                                                                                      type="text"
                                                                                      name="IdEncarregados"
@@ -129,28 +108,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                                      required=""></div>
                         </div>
                         <div >
-                            <div class="form-group"><label>Mensagem:</label><input value="<?php echo $row2[4]; ?>"
+                            <div class="form-group"><label>Id do Aluno:</label><input value="<?php echo $row2[4]; ?>"
                                                                                    class="form-control"
                                                                                    type="text" name="Mensagem"
                                                                                    autocomplete="off" required="">
                             </div>
                         </div>
                         <div >
-                            <div class="form-group"><label>DataEnvio:</label><input value="<?php echo $row2[5]; ?>"
+                            <div class="form-group"><label>Mensagem:</label><input value="<?php echo $row2[5]; ?>"
+                                                                                   class="form-control"
+                                                                                   type="text" name="Mensagem"
+                                                                                   autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div >
+                            <div class="form-group"><label>DataEnvio:</label><input value="<?php echo $row2[6]; ?>"
                                                                                    class="form-control"
                                                                                    type="date" name="DataEnvio"
                                                                                    autocomplete="off" required="">
                             </div>
                         </div>
                         <div >
-                            <div class="form-group"><label>Datade Confirmação:</label><input value="<?php echo $row2[6]; ?>"
+                            <div class="form-group"><label>Datade Confirmação:</label><input value="<?php echo $row2[7]; ?>"
                                                                                    class="form-control"
                                                                                    type="date" name="DataConfirmacao"
                                                                                    autocomplete="off">
                             </div>
                         </div>
                         <div >
-                            <div class="form-group"><label>Se foi Lido:</label><input value="<?php echo $row2[7]; ?>"
+                            <div class="form-group"><label>Se foi Lido:</label><input value="<?php echo $row2[8]; ?>"
                                                                                    class="form-control"
                                                                                    type="text" name="Lido"
                                                                                    autocomplete="off" required="">

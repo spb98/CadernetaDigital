@@ -112,30 +112,30 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                     <?php
                                     $ID = $_SESSION["LoggedId"];
 
-                                    $sql = "SELECT * FROM professores WHERE IdUsers = $ID ";
+                                    $sql = "SELECT * FROM professores WHERE IdUser = $ID ";
                                     $results = mysqli_query($db, $sql);
                                     $NecessarioID = mysqli_fetch_array($results);
 
                                     //echo 'Id do proff:' . $NecessarioID['IdProfessor'];
                                     $_SESSION['IDProf'] = $NecessarioID['IdProfessor'];
 
-                                    $sql = "SELECT * FROM recados WHERE IdProfessores = '$NecessarioID[IdProfessor]'";
+                                    $sql = "SELECT * FROM recados WHERE IdProfessor = '$NecessarioID[IdProfessor]'";
                                     $results = mysqli_query($db, $sql);
 
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
 
-                                        if ($row2[7] === 'n') {
-                                            $row2[7] = 'Ainda não foi lido.';
-                                            $row2[6] = '';
-                                        } elseif ($row2[7] === 's') {
-                                            $row2[7] = 'Lido no dia: ' . $row2[6];
+                                        if ($row2[8] === 'n') {
+                                            $row2[8] = 'Ainda não foi lido.';
+                                            $row2[7] = '';
+                                        } elseif ($row2[8] === 's') {
+                                            $row2[8] = 'Lido no dia: ' . $row2[7];
                                         }
 
                                         $datarow = $datarow . "<tr>
-                                                        <td>$row2[4]</td>
                                                         <td>$row2[5]</td>
-                                                        <td>$row2[7]</td>
+                                                        <td>$row2[6]</td>
+                                                        <td>$row2[8]</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";

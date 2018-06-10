@@ -74,27 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Users</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -117,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div>
                             <div class="form-group"><label>Password:</label><input value="<?php echo $row2[2]; ?>"
                                                                                 class="form-control"
-                                                                                type="text" autocomplete="off"
+                                                                                type="password" autocomplete="off"
                                                                                 required="" name="Password"></div>
                         </div>
                         <div>

@@ -19,7 +19,7 @@
                     <a href="EncLerRecados.php"> <i class="menu-icon fa  fa-envelope"></i>Ler Recados</a>
                 </li>
                 <li class="">
-                    <a href="ProfRecadosEnviados.php"> <i class="menu-icon fa fa-archive"></i>Recados Enviados</a>
+                    <a href="EncRecadosLidos.php"> <i class="menu-icon fa fa-archive"></i>Recados Enviados</a>
                 </li>
         </div><!-- /.navbar-collapse -->
     </nav>

@@ -89,27 +89,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Alunos</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -142,7 +121,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
                                         //echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
-                                        $foto = '<img src="data:image/jpeg;base64,' . base64_encode($row2['foto']) . '"/>';
+                                        $foto = '<img src="data:image/jpeg;base64,' . base64_encode($row2['Foto']) . '"/>';
                                         $datarow = $datarow . "<tr>
                                                         <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
@@ -150,7 +129,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                                         <td>$row2[6]</td>
                                                         <td>$row2[7]</td>
                                                         <td>$row2[8]</td>
-                                                        <td style='height: 10%; width: 10%;'>$foto</td>
+                                                        <td style='height: 50px; width: 50px;'>$foto</td>
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";

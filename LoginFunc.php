@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //echo $_SESSION["LoggedId"] . " --- " . $_SESSION["LoggedNivel"] ;
 
         if ($_SESSION["LoggedNivel"] === '0'){
-            header("location: AdminTableEscolas.php");
+            header("location: AdminTableAlunos.php");
         }elseif ($_SESSION["LoggedNivel"] === '1'){
             header("location: ProfRecadosEnviados.php");
         }elseif ($_SESSION["LoggedNivel"] === '2'){
-            header("location: EncEnviados.php");
+            header("location: EncLerRecados.php");
         }else{
             echo 'Erro na database, contactar criador do site.';
         }

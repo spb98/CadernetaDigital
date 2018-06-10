@@ -109,7 +109,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                         $idprofessor = $_SESSION['IDProf'];
 
-                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscolas = '$row[0]'";
+                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscola = '$row[0]'";
                                         $results2 = mysqli_query($db, $sql2);
 
                                         while ($row2 = mysqli_fetch_array($results2)) {
@@ -119,7 +119,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                         echo "</div>";
                                         echo "</div>";
 
-                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscolas = '$row[0]'";
+                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscola = '$row[0]'";
                                         $results2 = mysqli_query($db, $sql2);
 
                                         while ($row2 = mysqli_fetch_array($results2)) {
@@ -132,7 +132,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                             echo "<div class=\"form-check\">";
                                             while ($row3 = mysqli_fetch_array($results3)) {
 
-                                                $foto = '<img width="100" height="100" src="data:image/jpeg;base64,' . base64_encode($row3['foto']) . '"/>';
+                                                $foto = '<img width="100" height="100" src="data:image/jpeg;base64,' . base64_encode($row3['Foto']) . '"/>';
 
                                                 echo "<div class=\"checkbox\">";
                                                 echo "<label for=\"checkbox$row3[0]\" class=\"form-check-label \">";

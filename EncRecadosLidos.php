@@ -81,46 +81,37 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                     <tr>
                                         <th>Mensagem</th>
                                         <th>Data de Envio</th>
-                                        <th>Estado</th>
-                                        <th>Marcar como Lido</th>
+                                        <th>Quando foi Lido</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
                                     $ID = $_SESSION["LoggedId"];
 
-                                    $sql = "SELECT * FROM encarregados WHERE IdUser = $ID ";
+                                    $sql = "SELECT * FROM encarregados WHERE IdUsers = $ID ";
                                     $results = mysqli_query($db, $sql);
                                     $NecessarioID = mysqli_fetch_array($results);
 
                                     //echo 'Id do enc:' . $NecessarioID['IdEncarregado'];
                                     $_SESSION['IdEncarregado'] = $NecessarioID['IdEncarregado'];
 
-                                    $sql = "SELECT * FROM recados WHERE IdEncarregado = '$NecessarioID[IdEncarregado]' AND lido = 'n'";
+                                    $sql = "SELECT * FROM recados WHERE IdEncarregados = '$NecessarioID[IdEncarregado]' AND lido = 's'";
                                     $results = mysqli_query($db, $sql);
                                     $_SESSION['CLICADO'] = "1";
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
 
-                                        if ($row2[8] === 'n') {
-                                            $row2[8] = 'Por ler';
-                                            $row2[7] = '';
-                                        } elseif ($row2[8] === 's') {
-                                            $row2[8] = $row2[7];
+                                        if ($row2[7] === 'n') {
+                                            $row2[7] = 'Por ler';
+                                            $row2[6] = '';
+                                        } elseif ($row2[7] === 's') {
+                                            $row2[7] = $row2[6];
                                         }
 
                                         $datarow = $datarow . "<tr>
+                                                        <td>$row2[4]</td>
                                                         <td>$row2[5]</td>
-                                                        <td>$row2[6]</td>
-                                                        <td>$row2[8]</td>
-                                                        <td>
-                                                        <center><div class='btn-group' role='group' aria-label='...'>
-                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-check\"></i></button></a>
-                                                        </button>
-                                                        </div>
-                                                        </center>
-                      
-</td>
+                                                        <td>$row2[7]</td>
                                                         </tr>";
                                     }
                                     echo $datarow;
@@ -140,14 +131,14 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
 
         $ID = $_SESSION["LoggedId"];
 
-        $sql = "SELECT * FROM encarregados WHERE IdUser = $ID ";
+        $sql = "SELECT * FROM encarregados WHERE IdUsers = $ID ";
         $results = mysqli_query($db, $sql);
         $NecessarioID = mysqli_fetch_array($results);
 
         //echo 'Id do enc:' . $NecessarioID['IdEncarregado'];
         $_SESSION['IdEncarregado'] = $NecessarioID['IdEncarregado'];
 
-        $sql = "SELECT * FROM recados WHERE IdEncarregado = '$NecessarioID[IdEncarregado]'";
+        $sql = "SELECT * FROM recados WHERE IdEncarregados = '$NecessarioID[IdEncarregado]'";
         $results = mysqli_query($db, $sql);
         $_SESSION['CLICADO'] = "1";
         $datarow = "";
@@ -157,19 +148,19 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                     <div class=\"modal-dialog modal-lg\" role=\"document\">
                         <div class=\"modal-content\">
                             <div class=\"modal-header\">
-                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Confirmação:</h5>
+                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Large Modal</h5>
                                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
                                     <span aria-hidden=\"true\">&times;</span>
                                 </button>
                             </div>
                             <div class=\"modal-body\">
                                 <p>
-                                $row2[5]
+                                $row2[4]
                                 </p>
                             </div>
                             <div class=\"modal-footer\">
                                 <form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]\">
-                                <button type=\"submit\" class=\"btn btn-primary\">Marcar como Lido</button>
+                                <button type=\"submit\" class=\"btn btn-primary\">Confirmar</button>
                                 <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
                                 </form>
                             </div>

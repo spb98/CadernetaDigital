@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //Arranja tudo da tabela escola
-    $sql = "SELECT * FROM escolas WHERE IdEscolas = '$idnumber'";
+    $sql = "SELECT * FROM escolas WHERE IdEscola = '$idnumber'";
     $results = mysqli_query($db, $sql);
 
     $row2 = mysqli_fetch_array($results);
@@ -73,27 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </header><!--
     <!-- Header-->
-
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Table</a></li>
-                        <li class="active">Escolas</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="content mt-3">
         <div class="animated fadeIn">
