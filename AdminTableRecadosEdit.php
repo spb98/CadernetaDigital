@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -74,88 +74,81 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1> Editar a informação do recado:</h1>
-                    <hr></hr>
-                    <form method="post" action="AdminTableRecadosEditFunc.php?edit=<?php echo $row2[0]; ?>">
-                        <div>
-                            <div class="form-group"><label>ID:</label><input disabled
-                                                                             value="<?php echo $row2[0]; ?>"
-                                                                             class="form-control" type="text"
-                                                                             name="id"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id de Professor:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="IdProfessores"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id da Escola:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="text" autocomplete="off"
-                                                                                required="" name="IdEscolas"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id do Encarregado:</label><input value="<?php echo $row2[3]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="IdEncarregados"
-                                                                                     autocomplete="off"
-                                                                                     required=""></div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Id do Aluno:</label><input value="<?php echo $row2[4]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Mensagem"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Mensagem:</label><input value="<?php echo $row2[5]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Mensagem"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>DataEnvio:</label><input value="<?php echo $row2[6]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="date" name="DataEnvio"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Datade Confirmação:</label><input value="<?php echo $row2[7]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="date" name="DataConfirmacao"
-                                                                                   autocomplete="off">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Se foi Lido:</label><input value="<?php echo $row2[8]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Lido"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right">
-                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                    </form>
-                    <a href="AdminTableRecados.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                    <br><br>
+
+    <form method="post" class="" action="AdminTableRecadosEditFunc.php?edit=<?php echo $row2[0]; ?>"
+          enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Editar </strong> recados:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do recado:</label><input
+                            type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do professor:</label><input
+                            type="number" name="IdProfessor" value="<?php echo $row2[1]; ?>" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
                 </div>
+
+                <div class="form-group"><label class="form-control-label">ID da escola:</label><input
+                            type="number" name="IdEscola" value="<?php echo $row2[2]; ?>" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um escola na base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do encarregado:</label><input
+                            type="number" name="IdEncarregado" value="<?php echo $row2[3]; ?>"
+                            class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um encarregado na base de dados</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">ID do aluno:</label><input
+                            type="number" name="IdAluno" value="<?php echo $row2[4]; ?>" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um aluno na base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">Mensagem:</label><input
+                            type="text" maxlength="100" name="Mensagem" value="<?php echo $row2[5]; ?>"
+                            class="form-control"><span
+                            class="help-block">Mensagem do professor que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Data de Envio:</label><input
+                            type="date" name="DataEnvio" value="<?php echo $row2[6]; ?>"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Data de Confirmação:</label><input
+                            type="date" name="DataConfirmacao" value="<?php echo $row2[7]; ?>"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Se foi lido:</label><input
+                            type="text" maxlength="1" name="Lido" value="<?php echo $row2[8]; ?>"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Se tem confirmação:</label><input
+                            type="text" maxlength="1" name="Comparece" value="<?php echo $row2[9]; ?>"
+                            class="form-control"><span
+                            class="help-block">Se o encarregado comparece ou não (s/n/?/.) que deverá ser adicionado</span>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableRecados.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
             </div>
         </div>
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

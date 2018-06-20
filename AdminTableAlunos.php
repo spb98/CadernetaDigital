@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,7 +11,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-    <?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body
     <?php if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimApagar') {
         $_SESSION['ActionTaken'] = 'AcaoNula';
@@ -30,7 +30,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
-        $sql = "DELETE FROM alunos WHERE IdAlunos = $delete_id";
+        $sql = "DELETE FROM alunos WHERE IdAluno = $delete_id";
 
         if (mysqli_query($db, $sql)) {
             //echo "Record deleted successfully";
@@ -138,15 +138,16 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     ?>
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="location.href = 'AdminTableAlunosAdd.php';"
-                                        class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
                     </div>
+                    <button type="button" onclick="location.href = 'AdminTableAlunosAdd.php';"
+                            class="btn btn-success btn-sm">
+                        <i class="fa  fa-plus"></i> Adicionar
+                    </button>
                 </div>
-
-
             </div>
+            <br>
         </div><!-- .animated -->
     </div><!-- .content -->
 

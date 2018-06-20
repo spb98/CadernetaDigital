@@ -30,7 +30,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
-        $sql = "DELETE FROM escolas WHERE IdEscolas = $delete_id";
+        $sql = "DELETE FROM escolas WHERE IdEscola = $delete_id";
 
         if (mysqli_query($db, $sql)) {
             //echo "Record deleted successfully";
@@ -130,15 +130,16 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     ?>
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
-                                        class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
                     </div>
+                    <button type="button" onclick="location.href = 'AdminTableEscolasAdd.php';"
+                            class="btn btn-success btn-sm">
+                        <i class="fa  fa-plus"></i> Adicionar
+                    </button>
                 </div>
-
-
             </div>
+            <br>
         </div><!-- .animated -->
     </div><!-- .content -->
 

@@ -74,72 +74,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1> Editar a informação do Encarregado:</h1>
-                    <hr></hr>
-                    <form method="post" action="AdminTableEncarregadosEditFunc.php?edit=<?php echo $row2[0]; ?>">
-                        <div>
-                            <div class="form-group"><label>Id do Encarregado:</label><input disabled
-                                                                             value="<?php echo $row2[0]; ?>"
-                                                                             class="form-control" type="text"
-                                                                             name="id"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id do Aluno:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="IdAlunos"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id do User:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="text" autocomplete="off"
-                                                                                required="" name="IdUsers"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[3]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="Localidade"
-                                                                                     autocomplete="off"
-                                                                                     required=""></div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Morada:</label><input value="<?php echo $row2[4]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Morada"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Sexo:</label><input value="<?php echo $row2[5]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Sexo"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[6]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Nome"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right">
-                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                    </form>
-                    <a href="AdminTableEncarregados.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                    <br><br>
+    <form method="post" class="" action="AdminTableEncarregadosEditFunc.php?edit=<?php echo $row2[0]; ?>" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Editar </strong> encarregado:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do encarregado:</label><input
+                            type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
+                            class="help-block">Valor deverá ser mantido porque foi inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do User:</label><input
+                            type="number" name="IdUser" value="<?php echo $row2[2]; ?>" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um user na base de dados</span>
                 </div>
+
+                <div class="form-group"><label class="form-control-label">Nome do encarregado:</label><input
+                            type="text" maxlength="100" name="Nome" value="<?php echo $row2[6]; ?>"
+                            class="form-control"><span
+                            class="help-block">Nome do encarregado que deverá ser inserido acima</span></div>
+
+                <div class="form-group"><label class="form-control-label">Morada do encarregado:</label><input
+                            type="text" maxlength="100" name="Morada" value="<?php echo $row2[4]; ?>"
+                            class="form-control"><span
+                            class="help-block">Morada do encarregado que deverá ser inserido acima</span></div>
+
+                <div class="form-group"><label class="form-control-label">Localidade do encarregado:</label><input
+                            type="text" maxlength="100" name="Localidade" value="<?php echo $row2[3]; ?>"
+                            class="form-control"><span
+                            class="help-block">Localidade do encarregado que deverá ser inserido acima</span></div>
+
+                <div class="form-group"><label class="form-control-label">Sexo do encarregado:</label><input
+                            type="text" maxlength="10" name="Sexo" value="<?php echo $row2[5]; ?>"
+                            class="form-control"><span
+                            class="help-block">Sexo do encarregado que deverá ser inserido acima</span></div>
+
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableEncarregados.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
             </div>
         </div>
-            </div>
+    </form>
         </div><!-- .animated -->
     </div><!-- .content -->
 

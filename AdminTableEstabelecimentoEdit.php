@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //Arranja tudo da tabela estabelecimento
-    $sql = "SELECT * FROM estabelecimento WHERE IdEstablecimento = '$idnumber'";
+    $sql = "SELECT * FROM estabelecimentos WHERE IdEstabelecimento = '$idnumber'";
     $results = mysqli_query($db, $sql);
 
     $row2 = mysqli_fetch_array($results);
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -74,67 +74,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1> Editar a informação do Estabelecimento:</h1>
-                    <hr></hr>
-                    <form method="post" action="AdminTableEstabelecimentoEditFunc.php?edit=<?php echo $row2[0]; ?>">
-                        <div>
-                            <div class="form-group"><label>ID:</label><input disabled
-                                                                             value="<?php echo $row2[0]; ?>"
-                                                                             class="form-control" type="text"
-                                                                             name="id"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Designação:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="Designacao"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Localidade:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="text" autocomplete="off"
-                                                                                required="" name="Localidade"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Contacto:</label><input value="<?php echo $row2[3]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="Contacto"
-                                                                                     autocomplete="off"
-                                                                                     required=""></div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Email:</label><input value="<?php echo $row2[4]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Email"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Website:</label><input value="<?php echo $row2[5]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Website"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right">
-                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                    </form>
-                    <a href="AdminTableEstabelecimento.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                    <br><br>
-                </div>
+
+    <form method="post" class="" action="AdminTableEstabelecimentoEditFunc.php?edit=<?php echo $row2[0]; ?>"
+          enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Editar </strong> estabelecimento:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do estabelecimento:</label><input
+                            type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">Designação do estabelecimento:</label><input
+                            type="text" maxlength="100" name="Designacao"
+                            value="<?php echo $row2[1]; ?>"
+                            class="form-control"><span
+                            class="help-block">Designação do estabelecimento que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Localidade do estabelecimento:</label><input
+                            type="text" maxlength="100" name="Localidade" value="<?php echo $row2[2]; ?>"
+                            class="form-control"><span
+                            class="help-block">Localidade do estabelecimento que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Contacto do estabelecimento:</label><input
+                            type="number" maxlength="20" name="Contacto" value="<?php echo $row2[3]; ?>"
+                            class="form-control"><span
+                            class="help-block">Contacto do estabelecimento que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Email do estabelecimento:</label><input
+                            type="email" maxlength="100" name="Email" value="<?php echo $row2[4]; ?>"
+                            class="form-control"><span
+                            class="help-block">Email do estabelecimento que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Website do estabelecimento:</label><input
+                            type="text" maxlength="100" name="Website" value="<?php echo $row2[5]; ?>"
+                            class="form-control"><span
+                            class="help-block">Website do estabelecimento que deverá ser adicionado</span></div>
+
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableEstabelecimento.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
             </div>
         </div>
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

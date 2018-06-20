@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //echo $alunosv2 . "<br>";
 
     //Vai buscar os Id's de encarregado de educação equivalentes aos alunos selecionados
-    $sql = "SELECT * FROM alunos WHERE IdAlunos IN " . $alunosv2;
+    $sql = "SELECT * FROM alunos WHERE IdAluno IN " . $alunosv2;
     $results = mysqli_query($db, $sql);
 
     //Está a por os valores no array
@@ -74,21 +74,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo 'A mensagem: ' . $mensagem . '<br>';
     echo 'Professor: ' . $idprof . '<br>';
     echo 'Data de envio: ' . $dataenvio . '<br>';
+    echo 'Aluno: ' . $alunos[0] . '<br>';
     echo 'A turma selecionada é: ' . $turmaselecionada;
 
     $N = count($encarregados);
     for ($i = 0; $i < $N; $i++) {
-        $sql = "INSERT INTO recados (IdProfessores,IdEscolas,IdEncarregados,Mensagem,DataEnvio,Lido)
- VALUES ('$idprof','$escola','$encarregados[$i]','$mensagem','$dataenvio','n')";
+        $sql = "INSERT INTO recados (IdProfessor,IdEscola,IdEncarregado,IdAluno,Mensagem,DataEnvio,DataConfirmacao,Lido)
+ VALUES ('$idprof','$escola','$encarregados[$i]','$alunos[$i]','$mensagem','$dataenvio','$dataenvio','n')";
 
         if (mysqli_query($db, $sql)) {
-            //echo "Record added successfully";
+            echo "Record added successfully";
             $_SESSION['ActionTaken'] = 'SimAdicionar';
-            header("location: ProfRecadosEnviados.php");
+            //header("location: ProfRecadosEnviados.php");
         } else {
-            //echo "Error adding record: " . mysqli_error($db);
+            echo "Error adding record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';
-            header("location: ProfRecadosEnviados.php");
+            //header("location: ProfRecadosEnviados.php");
         }
     }
 

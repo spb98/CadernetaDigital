@@ -115,7 +115,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                                         <td>$row2[8]</td>
                                                         <td>
                                                         <center><div class='btn-group' role='group' aria-label='...'>
-                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-check\"></i></button></a>
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-success'><i class=\"fa fa-check\"></i></button></a>
                                                         </button>
                                                         </div>
                                                         </center>

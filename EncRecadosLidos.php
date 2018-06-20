@@ -88,30 +88,30 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                     <?php
                                     $ID = $_SESSION["LoggedId"];
 
-                                    $sql = "SELECT * FROM encarregados WHERE IdUsers = $ID ";
+                                    $sql = "SELECT * FROM encarregados WHERE IdUser = $ID ";
                                     $results = mysqli_query($db, $sql);
                                     $NecessarioID = mysqli_fetch_array($results);
 
                                     //echo 'Id do enc:' . $NecessarioID['IdEncarregado'];
                                     $_SESSION['IdEncarregado'] = $NecessarioID['IdEncarregado'];
 
-                                    $sql = "SELECT * FROM recados WHERE IdEncarregados = '$NecessarioID[IdEncarregado]' AND lido = 's'";
+                                    $sql = "SELECT * FROM recados WHERE IdEncarregado = '$NecessarioID[IdEncarregado]' AND Lido = 's'";
                                     $results = mysqli_query($db, $sql);
                                     $_SESSION['CLICADO'] = "1";
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
 
-                                        if ($row2[7] === 'n') {
-                                            $row2[7] = 'Por ler';
-                                            $row2[6] = '';
-                                        } elseif ($row2[7] === 's') {
-                                            $row2[7] = $row2[6];
+                                        if ($row2[8] === 'n') {
+                                            $row2[8] = 'Por ler';
+                                            $row2[7] = '';
+                                        } elseif ($row2[8] === 's') {
+                                            $row2[8] = $row2[7];
                                         }
 
                                         $datarow = $datarow . "<tr>
-                                                        <td>$row2[4]</td>
                                                         <td>$row2[5]</td>
-                                                        <td>$row2[7]</td>
+                                                        <td>$row2[6]</td>
+                                                        <td>$row2[8]</td>
                                                         </tr>";
                                     }
                                     echo $datarow;
@@ -125,62 +125,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                 </div>
             </div>
         </div><!-- .animated -->
-
-        <?php
-
-
-        $ID = $_SESSION["LoggedId"];
-
-        $sql = "SELECT * FROM encarregados WHERE IdUsers = $ID ";
-        $results = mysqli_query($db, $sql);
-        $NecessarioID = mysqli_fetch_array($results);
-
-        //echo 'Id do enc:' . $NecessarioID['IdEncarregado'];
-        $_SESSION['IdEncarregado'] = $NecessarioID['IdEncarregado'];
-
-        $sql = "SELECT * FROM recados WHERE IdEncarregados = '$NecessarioID[IdEncarregado]'";
-        $results = mysqli_query($db, $sql);
-        $_SESSION['CLICADO'] = "1";
-        $datarow = "";
-        while ($row2 = mysqli_fetch_array($results)) {
-
-            echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
-                    <div class=\"modal-dialog modal-lg\" role=\"document\">
-                        <div class=\"modal-content\">
-                            <div class=\"modal-header\">
-                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Large Modal</h5>
-                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
-                                    <span aria-hidden=\"true\">&times;</span>
-                                </button>
-                            </div>
-                            <div class=\"modal-body\">
-                                <p>
-                                $row2[4]
-                                </p>
-                            </div>
-                            <div class=\"modal-footer\">
-                                <form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]\">
-                                <button type=\"submit\" class=\"btn btn-primary\">Confirmar</button>
-                                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>";
-
-        }
-
-
-
-
-
-        ?>
-
-
-
-
-
-
     </div><!-- .content -->
 
 

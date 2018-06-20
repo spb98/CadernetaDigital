@@ -126,15 +126,16 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     ?>
                                     </tbody>
                                 </table>
-                                <button type="button" onclick="location.href = 'AdminTableTurmasAdd.php';"
-                                        class="btn btn-success"><em class="fa fa-plus"></em></button>
                             </form>
                         </div>
                     </div>
+                    <button type="button" onclick="location.href = 'AdminTableTurmasAdd.php';"
+                            class="btn btn-success btn-sm">
+                        <i class="fa  fa-plus"></i> Adicionar
+                    </button>
                 </div>
-
-
             </div>
+            <br>
         </div><!-- .animated -->
     </div><!-- .content -->
 

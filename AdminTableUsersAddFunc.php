@@ -14,12 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO users (Username,Password,Email,Nivel) VALUES ('$Username','$Password','$Email','$Nivel')";
 
         if (mysqli_query($db, $sql)) {
-            //echo "Record added successfully";
+            echo "Record added successfully";
             $_SESSION['ActionTaken'] = 'SimAdicionar';
             header("location: AdminTableUsers.php");
         } else {
-            //echo "Error adding record: " . mysqli_error($db);
+            echo "Error adding record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';
-            header("location: AdminTableUsers.php");
+            //header("location: AdminTableUsers.php");
         }
 }

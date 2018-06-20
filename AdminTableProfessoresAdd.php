@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,12 +11,12 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -59,46 +59,46 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Professores</strong>
-                        </div>
-                        <div class="card-body">
-                                <div class="col-md-12">
-                                    <h1> Adicionar a informação do Professor:</h1>
-                                    <hr></hr>
-                                    <form method="post" action="AdminTableProfessoresAddFunc.php">
-                                        <div>
-                                            <div class="form-group"><label>Id do User:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="IdUsers"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Nome:</label><input class="form-control"
-                                                                                                type="text" autocomplete="off"
-                                                                                                required="" name="Nome"></div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div>
-                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                                    </form>
-                                    <a href="AdminTableProfessores.php">
-                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-
-
+    <form method="post" class="" action="AdminTableProfessoresAddFunc.php" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Adicionar </strong> professor:
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do professor:</label><input
+                            type="number" disabled placeholder="Automático" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do User:</label><input
+                            type="number" maxlength="100" name="IdUser"
+                            placeholder="Exemplo: 1"
+                            class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um User na base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">Nome do professor:</label><input
+                            type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
+                            class="form-control"><span
+                            class="help-block">Nome do professor que deverá ser adicionado</span></div>
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableProfessores.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

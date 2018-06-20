@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -74,45 +74,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1> Editar a informação do Professor:</h1>
-                    <hr></hr>
-                    <form method="post" action="AdminTableProfessoresEditFunc.php?edit=<?php echo $row2[0]; ?>">
-                        <div>
-                            <div class="form-group"><label>ID:</label><input disabled
-                                                                             value="<?php echo $row2[0]; ?>"
-                                                                             class="form-control" type="text"
-                                                                             name="id"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Id do User:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="IdUsers"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Nome:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="text" autocomplete="off"
-                                                                                required="" name="Nome"></div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right">
-                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                    </form>
-                    <a href="AdminTableProfessores.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                    <br><br>
+    <form method="post" class="" action="AdminTableProfessoresEditFunc.php?edit=<?php echo $row2[0]; ?>"
+          enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Editar </strong> professores:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do professor:</label><input
+                            type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
+                            class="help-block">Valor deverá ser mantido porque foi inserido automaticamente pela base de dados</span>
                 </div>
+
+                <div class="form-group"><label class="form-control-label">ID do User:</label><input
+                            type="number" name="IdUser" value="<?php echo $row2[1]; ?>" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um user na base de dados</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">Nome do professor:</label><input
+                            type="text" maxlength="100" name="Nome" value="<?php echo $row2[2]; ?>"
+                            class="form-control"><span
+                            class="help-block">Nome do encarregado que deverá ser inserido acima</span></div>
+
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableProfessores.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
             </div>
         </div>
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

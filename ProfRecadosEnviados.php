@@ -30,7 +30,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
     if (isset($_GET['delete'])) {
         $delete_id = $_GET['delete'];
 
-        $sql = "DELETE FROM recados WHERE IdRecados = $delete_id";
+        $sql = "DELETE FROM recados WHERE IdRecado = $delete_id";
 
         if (mysqli_query($db, $sql)) {
             //echo "Record deleted successfully";
@@ -98,7 +98,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                             <strong class="card-title">Recados</strong>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="ProfRecadosEnviadosEdit.php">
+                            <form method="post" action="EEEEEEEEEEEEEEEEEEEEEEEEEEEE.php">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                     <tr>
@@ -125,22 +125,27 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                     $datarow = "";
                                     while ($row2 = mysqli_fetch_array($results)) {
 
+
+                                        echo "<tr>";
+                                        echo "<td>$row2[5]</td>";
+                                        echo "<td>$row2[6]</td>";
                                         if ($row2[8] === 'n') {
                                             $row2[8] = 'Ainda não foi lido.';
                                             $row2[7] = '';
+                                            echo " <td>$row2[8]</td>";
+                                            echo "<td><center>";
+                                            echo "<button id=\"delete$row2[0]\" onclick=\"check(this);\" value=\"$row2[0]\" type=\"button\" name=\"delete\" class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button>";
+                                            echo "</center></td>";
                                         } elseif ($row2[8] === 's') {
                                             $row2[8] = 'Lido no dia: ' . $row2[7];
+                                            echo " <td>$row2[8]</td>";
+                                            echo "<td><center>";
+                                            echo "<button disabled id=\"delete$row2[0]\" onclick=\"check(this);\" value=\"$row2[0]\" type=\"button\" name=\"delete\" class=\"btn btn-danger\"><em class=\"fa fa-ban\"></em></button>";
+                                            echo "</center></td>";
                                         }
 
-                                        $datarow = $datarow . "<tr>
-                                                        <td>$row2[5]</td>
-                                                        <td>$row2[6]</td>
-                                                        <td>$row2[8]</td>
-                                                        <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
-                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
-                                                        </tr>";
+                                        echo "</tr>";
                                     }
-                                    echo $datarow;
                                     ?>
                                     </tbody>
                                 </table>

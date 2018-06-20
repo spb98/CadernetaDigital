@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -74,60 +74,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1> Editar a informação do users:</h1>
-                    <hr></hr>
-                    <form method="post" action="AdminTableUsersEditFunc.php?edit=<?php echo $row2[0]; ?>">
-                        <div>
-                            <div class="form-group"><label>ID:</label><input disabled
-                                                                             value="<?php echo $row2[0]; ?>"
-                                                                             class="form-control" type="text"
-                                                                             name="id"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Username:</label><input value="<?php echo $row2[1]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="text"
-                                                                                     name="Username"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Password:</label><input value="<?php echo $row2[2]; ?>"
-                                                                                class="form-control"
-                                                                                type="password" autocomplete="off"
-                                                                                required="" name="Password"></div>
-                        </div>
-                        <div>
-                            <div class="form-group"><label>Email:</label><input value="<?php echo $row2[3]; ?>"
-                                                                                     class="form-control"
-                                                                                     type="email"
-                                                                                     name="Email"
-                                                                                     autocomplete="off"
-                                                                                     required=""></div>
-                        </div>
-                        <div >
-                            <div class="form-group"><label>Nivel:</label><input value="<?php echo $row2[4]; ?>"
-                                                                                   class="form-control"
-                                                                                   type="text" name="Nivel"
-                                                                                   autocomplete="off" required="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 content-right">
-                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                    </form>
-                    <a href="AdminTableUsers.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                    <br><br>
+    <form method="post" class="" action="AdminTableUsersEditFunc.php?edit=<?php echo $row2[0]; ?>"
+          enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Editar </strong> user:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do user:</label><input
+                            type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">Username:</label><input
+                            type="text" name="Username" value="<?php echo $row2[1]; ?>"
+                            class="form-control"><span
+                            class="help-block">Corresponde ao username a ser adicionado</span>
                 </div>
+
+                <div class="form-group"><label class="form-control-label">Password:</label><input
+                            type="password" name="Password" value="<?php echo $row2[2]; ?>"
+                            class="form-control"><span
+                            class="help-block">Corresponde á password a ser adicionado</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">Email:</label><input
+                            type="email" name="Email" value="<?php echo $row2[3]; ?>" class="form-control"><span
+                            class="help-block">Corresponde ao email a ser adicionado</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">Nível:</label><input
+                            type="number" name="Nivel" value="<?php echo $row2[4]; ?>" class="form-control"><span
+                            class="help-block">Corresponde ao nível a ser adicionado</span></div>
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableUsers.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
             </div>
         </div>
-            </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

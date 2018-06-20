@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,7 +11,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body
     <?php if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'SimApagar') {
         $_SESSION['ActionTaken'] = 'AcaoNula';
@@ -46,7 +46,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -100,24 +100,24 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                         </div>
                         <div class="card-body">
                             <form method="post" action="AdminTableEncarregadosEdit.php">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Sexo</th>
-                                    <th>Localidade</th>
-                                    <th>Morada</th>
-                                    <th>Ação</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql = "SELECT * FROM encarregados";
-                                $results = mysqli_query($db, $sql);
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Sexo</th>
+                                        <th>Localidade</th>
+                                        <th>Morada</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM encarregados";
+                                    $results = mysqli_query($db, $sql);
 
-                                $datarow = "";
-                                while ($row2 = mysqli_fetch_array($results)) {
-                                    $datarow = $datarow . "<tr>
+                                    $datarow = "";
+                                    while ($row2 = mysqli_fetch_array($results)) {
+                                        $datarow = $datarow . "<tr>
                                                         <td>$row2[6]</td>
                                                         <td>$row2[5]</td>
                                                         <td>$row2[3]</td>
@@ -125,20 +125,21 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                                         <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
                                                         </tr>";
-                                }
-                                echo $datarow;
-                                ?>
-                                </tbody>
-                            </table>
-                            <button type="button" onclick="location.href = 'AdminTableEncarregadosAdd.php';"
-                                    class="btn btn-success"><em class="fa fa-plus"></em></button>
+                                    }
+                                    echo $datarow;
+                                    ?>
+                                    </tbody>
+                                </table>
                             </form>
                         </div>
                     </div>
+                    <button type="button" onclick="location.href = 'AdminTableEncarregadosAdd.php';"
+                            class="btn btn-success btn-sm">
+                        <i class="fa  fa-plus"></i> Adicionar
+                    </button>
                 </div>
-
-
             </div>
+            <br>
         </div><!-- .animated -->
     </div><!-- .content -->
 
@@ -209,7 +210,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     }
 
 </script>
-
 
 
 </body>

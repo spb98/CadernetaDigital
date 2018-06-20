@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,12 +11,12 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -59,80 +59,80 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Recados</strong>
-                        </div>
-                        <div class="card-body">
-                                <div class="col-md-12">
-                                    <h1> Adicionar a informação do Recado:</h1>
-                                    <hr></hr>
-                                    <form method="post" action="AdminTableRecadosAddFunc.php">
-                                        <div>
-                                            <div class="form-group"><label>Id de Professor:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="IdProfessores"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Id da Escola:</label><input class="form-control"
-                                                                                                type="text" autocomplete="off"
-                                                                                                required="" name="IdEscolas"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Id de Encarregado:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="IdEncarregados"
-                                                                                                     autocomplete="off"
-                                                                                                     required=""></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Mensagem:</label><input class="form-control"
-                                                                                                   type="text"
-                                                                                                   name="Mensagem"
-                                                                                                   required="">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Data de Envio:</label><input class="form-control"
-                                                                                                   type="date"
-                                                                                                   name="DataEnvio"
-                                                                                                   required="">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Data de Confirmacao:</label><input class="form-control"
-                                                                                                   type="date"
-                                                                                                   name="DataConfirmacao">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Se foi Lido:</label><input class="form-control"
-                                                                                                   type="text"
-                                                                                                   name="Lido"
-                                                                                                   required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div>
-                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                                    </form>
-                                    <a href="AdminTableRecados.php">
-                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
+
+    <form method="post" class="" action="AdminTableRecadosAddFunc.php" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Adicionar </strong> recado:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do recado:</label><input
+                            type="number" disabled placeholder="Automático" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do professor:</label><input
+                            type="number" name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
                 </div>
 
+                <div class="form-group"><label class="form-control-label">ID da escola:</label><input
+                            type="number" name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um escola na base de dados</span></div>
 
+                <div class="form-group"><label class="form-control-label">ID do encarregado:</label><input
+                            type="number" name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um encarregado na base de dados</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">ID do aluno:</label><input
+                            type="number" name="IdAluno" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um aluno na base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">Mensagem:</label><input
+                            type="text" maxlength="100" name="Mensagem" placeholder="Exemplo: Vim por este meio..."
+                            class="form-control"><span
+                            class="help-block">Mensagem do professor que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Data de Envio:</label><input
+                            type="date" name="DataEnvio"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Data de Confirmação:</label><input
+                            type="date" name="DataConfirmacao"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Se foi lido:</label><input
+                            type="text" maxlength="1" name="Lido" placeholder="Exemplo: s"
+                            class="form-control"><span
+                            class="help-block">Se o recado foi lido</span></div>
+
+                <div class="form-group"><label class="form-control-label">Se tem confirmação:</label><input
+                            type="text" maxlength="1" name="Comparece" placeholder="Exemplo: s"
+                            class="form-control"><span
+                            class="help-block">Se o encarregado comparece ou não (s/n/?/.) que deverá ser adicionado</span>
+                </div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableRecados.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

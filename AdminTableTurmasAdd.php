@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,12 +11,12 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -59,60 +59,53 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
+    <form method="post" class="" action="AdminTableTurmasAddFunc.php" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Adicionar </strong> turmas:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID da turma:</label><input
+                            type="number" disabled placeholder="Automático" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Turmas</strong>
-                        </div>
-                        <div class="card-body">
-                                <div class="col-md-12">
-                                    <h1> Adicionar a informação da Turma:</h1>
-                                    <hr></hr>
-                                    <form method="post" action="AdminTableTurmasAddFunc.php">
-                                        <div>
-                                            <div class="form-group"><label>Id da Escola:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="IdEscolas"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Id do Professor:</label><input class="form-control"
-                                                                                                type="text" autocomplete="off"
-                                                                                                required="" name="IdProfessor"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Ano:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="Ano"
-                                                                                                     autocomplete="off"
-                                                                                                     required=""></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Turma:</label><input class="form-control"
-                                                                                                   type="text"
-                                                                                                   name="Turma"
-                                                                                                   required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div>
-                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                                    </form>
-                                    <a href="AdminTableTurmas.php">
-                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
+                <div class="form-group"><label class="form-control-label">ID da escola:</label><input
+                            type="number" name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a uma escola na base de dados</span>
                 </div>
 
+                <div class="form-group"><label class="form-control-label">ID do professor:</label><input
+                            type="number" name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
+                </div>
 
+                <div class="form-group"><label class="form-control-label">Ano da turma:</label><input
+                            type="number" name="Ano" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde ao ano da turma</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">A turma correspondente ao ano:</label><input
+                            type="text" name="Turma" placeholder="Exemplo: A" class="form-control"><span
+                            class="help-block">Valor que corresponde a uma turma</span></div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableTurmas.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

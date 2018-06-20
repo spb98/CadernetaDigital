@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,7 +11,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 
 <!-- Left Panel -->
@@ -59,93 +59,78 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Alunos</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="col-md-12">
-                                <h1> Adicionar a informação do aluno:</h1>
-                                <hr></hr>
-                                <form method="post" action="AdminTableAlunosAddFunc.php" enctype="multipart/form-data">
-                                    <div>
-                                        <div class="form-group"><label>Id Encarregado:</label><input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="IdEncarregados"></div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Nome:</label><input class="form-control"
-                                                                                           type="text"
-                                                                                           autocomplete="off"
-                                                                                           required="" name="Nome">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Morada:</label><input class="form-control"
-                                                                                             type="text"
-                                                                                             name="Morada"
-                                                                                             autocomplete="off"
-                                                                                             required=""></div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Localidade:</label><input class="form-control"
-                                                                                                 type="text"
-                                                                                                 name="Localidade"
-                                                                                                 required="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>CC:</label><input class="form-control"
-                                                                                         type="text"
-                                                                                         name="CC"
-                                                                                         required="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="form-group"><label>Sexo:</label><input class="form-control"
-                                                                                           type="text"
-                                                                                           name="Sexo"
-                                                                                           required="">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div ><label for="file-input" class=" form-control-label">Foto:</label></div>
-                                        <div ><input type="file" id="file-input"
-                                                                            name="foto" class="form-control-file">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div>
-                                        <div class="form-group"><label>Data de Nascimento:</label><input
-                                                    class="form-control"
-                                                    type="date"
-                                                    name="DataNascimento"
-                                                    required="">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div>
-                                            <button class="btn btn-primary form-btn" type="submit">Fazer Alterações
-                                            </button>
-                                </form>
-                                <a href="AdminTableAlunos.php">
-                                    <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <form method="post" class="" action="AdminTableAlunosAddFunc.php" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Adicionar </strong> aluno:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do Aluno:</label><input
+                            type="number" disabled placeholder="Automático" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+
+                <div class="form-group"><label class="form-control-label">ID do Encarregado:</label><input
+                            type="number" name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados</span>
                 </div>
 
+                <div class="form-group"><label class="form-control-label">ID da Turma:</label><input
+                            type="number" name="IdTurma" placeholder="Exemplo: 1" class="form-control"><span
+                            class="help-block">Valor númerico que corresponde a uma turma na base de dados</span></div>
 
+                <div class="form-group"><label class="form-control-label">Nome do aluno:</label><input
+                            type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
+                            class="form-control"><span
+                            class="help-block">Nome do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Morada do aluno:</label><input
+                            type="text" maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
+                            class="form-control"><span
+                            class="help-block">Morada do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
+                            type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
+                            class="form-control"><span
+                            class="help-block">Localidade do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Cartão de Cidadão do aluno:</label><input
+                            type="text" maxlength="20" name="CC" placeholder="Exemplo: XXXXXXXX XXXX"
+                            class="form-control"><span
+                            class="help-block">Cartão de Cidadão do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Sexo do aluno:</label><input
+                            type="text" maxlength="10" name="Sexo" placeholder="Exemplo: Masculino"
+                            class="form-control"><span
+                            class="help-block">Sexo do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label class="form-control-label">Data de nascimento do aluno:</label><input
+                            type="date" name="DataNascimento" class="form-control"><span
+                            class="help-block">Data de nascimento do aluno que deverá ser adicionado</span></div>
+
+                <div class="form-group"><label for="file-input" class=" form-control-label">Foto:</label>
+                    <input type="file" id="file-input" name="Foto" class="form-control-file">
+                    <span class="help-block">Foto do aluno que deverá ser adicionado</span></div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableAlunos.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->

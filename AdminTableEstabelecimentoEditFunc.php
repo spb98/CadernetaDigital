@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Email = mysqli_real_escape_string($db, $_POST['Email']);
     $Website = mysqli_real_escape_string($db, $_POST['Website']);
 
-    $sql = "UPDATE estabelecimento SET Designacao ='$Designacao', Localidade='$Localidade', Contacto='$Contacto', Email='$Email',Website='$Website'
-            WHERE IdEstablecimento ='$id'";
+    $sql = "UPDATE estabelecimentos SET Designacao ='$Designacao', Localidade='$Localidade', Contacto='$Contacto', Email='$Email',Website='$Website'
+            WHERE IdEstabelecimento ='$id'";
 
     if (mysqli_query($db, $sql)) {
         //echo "Record updated successfully";

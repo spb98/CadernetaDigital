@@ -4,33 +4,32 @@ include("ConfigsDB.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $idencarregados = mysqli_real_escape_string($db, $_POST['IdEncarregados']);
+    $idencarregado = mysqli_real_escape_string($db, $_POST['IdEncarregado']);
+    $idturma = mysqli_real_escape_string($db, $_POST['IdTurma']);
     $nome = mysqli_real_escape_string($db, $_POST['Nome']);
     $morada = mysqli_real_escape_string($db, $_POST['Morada']);
     $localidade = mysqli_real_escape_string($db, $_POST['Localidade']);
     $cc = mysqli_real_escape_string($db, $_POST['CC']);
     $sexo = mysqli_real_escape_string($db, $_POST['Sexo']);
     $datanascimento = mysqli_real_escape_string($db, $_POST['DataNascimento']);
-    //$foto = mysqli_real_escape_string($db, $_POST['foto']);
-
 
     //verificar as propriedades da imagem
-    $check = getimagesize($_FILES["foto"]["tmp_name"]);
+    $check = getimagesize($_FILES["Foto"]["tmp_name"]);
     if($check !== false){
-        $image = $_FILES['foto']['tmp_name'];
-        $foto2 = addslashes(file_get_contents($image));
+        $image = $_FILES['Foto']['tmp_name'];
+        $foto = addslashes(file_get_contents($image));
     }
     //imagem vai ser armazenada
 
-    $sql = "INSERT INTO alunos (IdEncarregados,Nome,Morada,Localidade,CC,Sexo,DataNascimento,foto) VALUES ('$idencarregados','$nome','$morada','$localidade','$cc','$sexo','$datanascimento','$foto2')";
+    $sql = "INSERT INTO alunos (IdEncarregado,IdTurma,Nome,Morada,Localidade,CC,Sexo,DataNascimento,foto) VALUES ('$idencarregado','$idturma','$nome','$morada','$localidade','$cc','$sexo','$datanascimento','$foto')";
 
     if (mysqli_query($db, $sql)) {
         //echo "Record added successfully";
         $_SESSION['ActionTaken'] = 'SimAdicionar';
         header("location: AdminTableAlunos.php");
     } else {
-        //echo "Error adding record: " . mysqli_error($db);
+        echo "Error adding record: " . mysqli_error($db);
         $_SESSION['ActionTaken'] = 'ERRO';
-        header("location: AdminTableAlunos.php");
+        //header("location: AdminTableAlunos.php");
     }
 }

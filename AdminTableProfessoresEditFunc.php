@@ -9,14 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error getting id record.";
     }
 
-    $IdUsers = mysqli_real_escape_string($db, $_POST['IdUsers']);
+    $IdUser = mysqli_real_escape_string($db, $_POST['IdUser']);
     $Nome = mysqli_real_escape_string($db, $_POST['Nome']);
 
-    $sql = "UPDATE professores SET IdUsers ='$IdUsers', Nome='$Nome'
+    $sql = "UPDATE professores SET IdUser ='$IdUser', Nome='$Nome'
             WHERE IdProfessor ='$id'";
 
     if (mysqli_query($db, $sql)) {
-        //echo "Record updated successfully";
+        echo "Record updated successfully";
         $_SESSION['ActionTaken'] = 'SimEditar';
         header("location: AdminTableProfessores.php");
     } else {

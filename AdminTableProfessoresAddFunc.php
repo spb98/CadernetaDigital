@@ -6,18 +6,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-        $IdUsers = mysqli_real_escape_string($db, $_POST['IdUsers']);
+        $IdUser = mysqli_real_escape_string($db, $_POST['IdUser']);
         $Nome = mysqli_real_escape_string($db, $_POST['Nome']);
 
-        $sql = "INSERT INTO professores (IdUsers,Nome) VALUES ('$IdUsers','$Nome')";
+        $sql = "INSERT INTO professores (IdUser,Nome) VALUES ('$IdUser','$Nome')";
 
         if (mysqli_query($db, $sql)) {
-            //echo "Record added successfully";
+            echo "Record added successfully";
             $_SESSION['ActionTaken'] = 'SimAdicionar';
             header("location: AdminTableProfessores.php");
         } else {
-            //echo "Error adding record: " . mysqli_error($db);
+            echo "Error adding record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';
-            header("location: AdminTableProfessores.php");
+            //header("location: AdminTableProfessores.php");
         }
 }

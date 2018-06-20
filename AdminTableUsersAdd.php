@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,12 +11,12 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 
 <!-- Left Panel -->
 
-<?php include("AdminTableSideBars.php");?>
+<?php include("AdminTableSideBars.php"); ?>
 
 <!-- Left Panel -->
 
@@ -59,60 +59,55 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     </header><!--
     <!-- Header-->
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="row">
+    <form method="post" class="" action="AdminTableUsersAddFunc.php" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <strong>Adicionar </strong> user:
+            </div>
+            <div class="card-body card-block">
+                <div class="form-group"><label class="form-control-label">ID do user:</label><input
+                            type="number" disabled placeholder="Automático" class="form-control"><span
+                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Users</strong>
-                        </div>
-                        <div class="card-body">
-                                <div class="col-md-12">
-                                    <h1> Adicionar a informação do user:</h1>
-                                    <hr></hr>
-                                    <form method="post" action="AdminTableUsersAddFunc.php">
-                                        <div>
-                                            <div class="form-group"><label>Username:</label><input class="form-control"
-                                                                                                     type="text"
-                                                                                                     name="Username"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Password:</label><input class="form-control"
-                                                                                                type="password" autocomplete="off"
-                                                                                                required="" name="Password"></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Email:</label><input class="form-control"
-                                                                                                     type="email"
-                                                                                                     name="Email"
-                                                                                                     autocomplete="off"
-                                                                                                     required=""></div>
-                                        </div>
-                                        <div>
-                                            <div class="form-group"><label>Nivel:</label><input class="form-control"
-                                                                                                   type="text"
-                                                                                                   name="Nivel"
-                                                                                                   required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div>
-                                                <button class="btn btn-primary form-btn" type="submit">Fazer Alterações</button>
-                                    </form>
-                                    <a href="AdminTableUsers.php">
-                                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
+                <div class="form-group"><label class="form-control-label">Username:</label><input
+                            type="text" name="Username" placeholder="Exemplo: professor123123"
+                            class="form-control"><span
+                            class="help-block">Corresponde ao username a ser adicionado</span>
                 </div>
 
+                <div class="form-group"><label class="form-control-label">Password:</label><input
+                            type="password" name="Password" placeholder="Exemplo: password123"
+                            class="form-control"><span
+                            class="help-block">Corresponde á password a ser adicionado</span>
+                </div>
 
+                <div class="form-group"><label class="form-control-label">Email:</label><input
+                            type="email" name="Email" placeholder="Exemplo: asdasd@gmail.com" class="form-control"><span
+                            class="help-block">Corresponde ao email a ser adicionado</span>
+                </div>
+
+                <div class="form-group"><label class="form-control-label">Nível:</label><input
+                            type="number" name="Nivel" placeholder="Exemplo: 0" class="form-control"><span
+                            class="help-block">Corresponde ao nível a ser adicionado</span></div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submeter
+                </button>
+                <button type="reset" class="btn btn-info btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+                <a href="AdminTableUsers.php">
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa  fa-arrow-circle-o-right"></i> Cancelar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div><!-- .animated -->
+</div><!-- .content -->
 
 
 </div><!-- /#right-panel -->
