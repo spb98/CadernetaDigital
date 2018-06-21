@@ -105,10 +105,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     <tr>
                                         <th>Nome</th>
                                         <th>Morada</th>
-                                        <th>Localidade</th>
-                                        <th>CC</th>
-                                        <th>Sexo</th>
-                                        <th>Data de Nascimento</th>
                                         <th>Foto</th>
                                         <th>Ação</th>
                                     </tr>
@@ -125,13 +121,15 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                         $datarow = $datarow . "<tr>
                                                         <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
-                                                        <td>$row2[5]</td>
-                                                        <td>$row2[6]</td>
-                                                        <td>$row2[7]</td>
-                                                        <td>$row2[8]</td>
-                                                        <td style='height: 50px; width: 50px;'>$foto</td>
-                                                        <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
-                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
+                                                        <td style='height: 75px; width: 75px;'>$foto</td>
+                                                        <td><center>
+                                                            <div class='btn-group' role='group' aria-label='...'>
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-eye\"></i></button></a></button >
+                                                           </div >
+                                                            <button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><i class=\"fa fa-pencil\"></i>
+                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+                                                            
+                                                        </center></td>
                                                         </tr>";
                                     }
                                     echo $datarow;
@@ -149,6 +147,55 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             </div>
             <br>
         </div><!-- .animated -->
+
+        <?php
+
+        $ID = $_SESSION["LoggedId"];
+
+        $sql = "SELECT * FROM alunos";
+        $results = mysqli_query($db, $sql);
+
+        while ($row2 = mysqli_fetch_array($results)) {
+            $foto = '<img src="data:image/jpeg;base64,' . base64_encode($row2['Foto']) . '"/>';
+            echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
+                    <div class=\"modal-dialog modal-lg\" role=\"document\">
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Informação:</h5>
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                    <span aria-hidden=\"true\">&times;</span>
+                                </button>
+                            </div>
+                            <div class=\"modal-body\">
+                                 ID do aluno: $row2[0]
+                                 <br>
+                                 ID do encarregado: $row2[1]
+                                 <br>
+                                 ID da turma: $row2[2]
+                                 <br>
+                                 Nome do aluno: $row2[3]
+                                 <br>
+                                 Morada do aluno: $row2[4]
+                                 <br>
+                                 Localidade do aluno: $row2[5]
+                                 <br>
+                                 Número do cartão de cidadão do aluno: $row2[6]
+                                 <br>
+                                 Sexo do aluno: $row2[7]
+                                 <br>
+                                 Data de nascimento do aluno: $row2[8]
+                                 <br>
+                                 Foto: <p style='height: 200px; width: 200px;'>$foto</p>
+                            </div>
+                            <div class=\"modal-footer\">
+                                <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+        }
+        ?>
+
     </div><!-- .content -->
 
 

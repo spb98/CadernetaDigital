@@ -1,4 +1,4 @@
-<?php include("ConfigsDoctype.php");?>
+<?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
 //Verifica se o user tem o login feito e credenciais
@@ -11,7 +11,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 ?>
 
 <html class="no-js" lang=""> <!--<![endif]-->
-<?php include("ConfigsHead.php");?>
+<?php include("ConfigsHead.php"); ?>
 <body>
 <!-- Left Panel -->
 
@@ -75,7 +75,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                         </div>
                                         <div class="col-12 col-md-5">
                                             <select name="escola" id="schoolselector" class="form-control">
-                                                <option  value="">Selecione a escola...</option>
+                                                <option value="">Selecione a escola...</option>
                                                 <?php
 
                                                 $idprofessor = $_SESSION['IDProf'];
@@ -149,85 +149,78 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                     <div class="form-group"><label
                                                 class=" form-control-label">Mensagem:</label><textarea
-                                                required name="textarea-input" id="textarea-input" rows="9" maxlength="5000"
+                                                required name="textarea-input" id="textarea-input" rows="9"
+                                                maxlength="5000"
                                                 placeholder="Vim por este meio..." class="form-control"></textarea>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="col-md-12 content-right">
-                                            <button class="btn btn-primary form-btn" type="submit">Fazer Alterações
-                                            </button>
-                    </form>
-                    <a href="AdminTableRecados.php">
-                        <button class="btn btn-danger form-btn" type="button">Cancelar</button>
-                    </a>
-                </div>
-                <br><br>
-            </div>
-        </div>
-    </div>
-</div>
-</div><!-- .animated -->
-</div><!-- .content -->
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-dot-circle-o"></i> Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </div><!-- .animated -->
+            </div><!-- .content -->
 
 
-</div><!-- /#right-panel -->
+        </div><!-- /#right-panel -->
 
-<!-- Right Panel -->
-
-
-<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/main.js"></script>
+        <!-- Right Panel -->
 
 
-<script src="assets/js/lib/data-table/datatables.min.js"></script>
-<script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-<script src="assets/js/lib/data-table/jszip.min.js"></script>
-<script src="assets/js/lib/data-table/pdfmake.min.js"></script>
-<script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-<script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-<script src="assets/js/lib/data-table/datatables-init.js"></script>
+        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
 
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#bootstrap-data-table-export').DataTable();
-    });
-</script>
+        <script src="assets/js/lib/data-table/datatables.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/jszip.min.js"></script>
+        <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+        <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+        <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+        <script src="assets/js/lib/data-table/datatables-init.js"></script>
 
 
-<script>
-    $(function () {
-        $('#schoolselector').change(function () {
-            //Esconde os outros selects
-            $('.turmas').hide();
-            //mostra o correto
-            $('#' + 'escola' + $(this).val()).show();
-            //faz reset ás checkboxes
-            $('input:checkbox').removeAttr('checked');
-            //esconde-as
-            $('.alunos').hide();
-            //reseta selects
-            $('#classselector option').prop('selected', function() {
-                return this.defaultSelected;
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#bootstrap-data-table-export').DataTable();
             });
-        });
-    });
+        </script>
 
-    $(function () {
-        $('#classselector').change(function () {
-            $('.alunos').hide();
-            $('#' + 'alunos' + $(this).val()).show();
-            $('input:checkbox').removeAttr('checked');
-        });
-    });
 
-</script>
+        <script>
+            $(function () {
+                $('#schoolselector').change(function () {
+                    //Esconde os outros selects
+                    $('.turmas').hide();
+                    //mostra o correto
+                    $('#' + 'escola' + $(this).val()).show();
+                    //faz reset ás checkboxes
+                    $('input:checkbox').removeAttr('checked');
+                    //esconde-as
+                    $('.alunos').hide();
+                    //reseta selects
+                    $('#classselector option').prop('selected', function () {
+                        return this.defaultSelected;
+                    });
+                });
+            });
+
+            $(function () {
+                $('#classselector').change(function () {
+                    $('.alunos').hide();
+                    $('#' + 'alunos' + $(this).val()).show();
+                    $('input:checkbox').removeAttr('checked');
+                });
+            });
+
+        </script>
 
 </body>
 </html>

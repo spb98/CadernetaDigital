@@ -1,2 +1,1 @@
 Utilizando o Xampp dá-se import a esta database com o nome que está presente no ficheiro.
-Adicionando tambem utilizador na tabela user com o nivel '0'.

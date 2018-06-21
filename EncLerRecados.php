@@ -152,7 +152,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
         $_SESSION['CLICADO'] = "1";
         $datarow = "";
         while ($row2 = mysqli_fetch_array($results)) {
-
             echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
                     <div class=\"modal-dialog modal-lg\" role=\"document\">
                         <div class=\"modal-content\">
@@ -176,19 +175,8 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                         </div>
                     </div>
                 </div>";
-
         }
-
-
-
-
-
         ?>
-
-
-
-
-
 
     </div><!-- .content -->
 

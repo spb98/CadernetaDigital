@@ -104,8 +104,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                 <thead>
                                 <tr>
                                     <th>Username</th>
-                                    <th>Password</th>
-                                    <th>Email</th>
                                     <th>Nivel</th>
                                     <th>Ação</th>
                                 </tr>
@@ -119,11 +117,15 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                 while ($row2 = mysqli_fetch_array($results)) {
                                     $datarow = $datarow . "<tr>
                                                         <td>$row2[1]</td>
-                                                        <td>**********</td>
-                                                        <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
-                                                        <td><button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><em class=\"fa fa-pencil\"></em>
-                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><em class=\"fa fa-trash\"></em></button></td>
+                                                        <td><center>
+                                                            <div class='btn-group' role='group' aria-label='...'>
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-eye\"></i></button></a></button >
+                                                           </div >
+                                                            <button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><i class=\"fa fa-pencil\"></i>
+                                                            <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
+                                                            
+                                                        </center></td> 
                                                         </tr>";
                                 }
                                 echo $datarow;
@@ -141,6 +143,42 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             </div>
             <br>
         </div><!-- .animated -->
+
+        <?php
+
+        $ID = $_SESSION["LoggedId"];
+
+        $sql = "SELECT * FROM users";
+        $results = mysqli_query($db, $sql);
+
+        while ($row2 = mysqli_fetch_array($results)) {
+            echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
+                    <div class=\"modal-dialog modal-lg\" role=\"document\">
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Informação:</h5>
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                    <span aria-hidden=\"true\">&times;</span>
+                                </button>
+                            </div>
+                            <div class=\"modal-body\">
+                                 ID do user: $row2[0]
+                                 <br>
+                                 Username: $row2[1]
+                                 <br>
+                                 Email: $row2[3]
+                                 <br>
+                                 Nível: $row2[4]
+                            </div>
+                            <div class=\"modal-footer\">
+                                <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+        }
+        ?>
+
     </div><!-- .content -->
 
 

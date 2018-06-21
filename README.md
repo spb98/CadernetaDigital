@@ -2,16 +2,24 @@
 
 Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
->Em falta:
+>Idealmente ser adicionado:
   - Encarregados marcarem recados como aceites ou negados (Em casos de visitas de estudo,etc).
-  
->Erros:
-  - Traduções.
-  - Tabelas não são 100% responsive.
 
+>Em falta:
+  - Verificar as condições em todos os inputs.
+  - Traduzir o restante do site.
+  - Verificar todos o texto escrito no site.
+  - Encher os dados da database com dados "Reais".
+  
 # Patchnotes
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
+
+>Versão Beta 2.9
+> - Conteudos:
+>   - Atualizado a database.
+>   - Todas as tabelas são agora responsive.
+>   - Site limpo nos professores e administradores.
 
 >Versão Beta 2.8
 > - Conteudos:
