@@ -14,18 +14,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $datanascimento = mysqli_real_escape_string($db, $_POST['DataNascimento']);
 
     //verificar as propriedades da imagem
+
     $check = getimagesize($_FILES["Foto"]["tmp_name"]);
-    if($check !== false){
+    if (filesize ($_FILES["Foto"]["tmp_name"]) > 150000 ){
+        echo "File muito grande....<br><br>";
+        //$_SESSION['ActionTaken'] = 'FILE';
+        header("location: AdminTableAlunos.php");
+    } elseif ($check !== false) {
+        $_SESSION['ActionTaken'] = 'AcaoNula';
         $image = $_FILES['Foto']['tmp_name'];
         $foto = addslashes(file_get_contents($image));
     }
+
     //imagem vai ser armazenada
 
     $sql = "INSERT INTO alunos (IdEncarregado,IdTurma,Nome,Morada,Localidade,CC,Sexo,DataNascimento,foto) VALUES ('$idencarregado','$idturma','$nome','$morada','$localidade','$cc','$sexo','$datanascimento','$foto')";
 
     if (mysqli_query($db, $sql)) {
-        //echo "Record added successfully";
-        $_SESSION['ActionTaken'] = 'SimAdicionar';
+        echo "Record added successfully";
+        $_SESSION['ActionTaken'] = 'SimEditar';
         header("location: AdminTableAlunos.php");
     } else {
         echo "Error adding record: " . mysqli_error($db);

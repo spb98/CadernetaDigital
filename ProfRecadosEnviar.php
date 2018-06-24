@@ -58,7 +58,17 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
     </header><!--
     <!-- Header-->
-
+    <?php
+    if (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'Missing') {
+        $_SESSION['ActionTaken'] = 'AcaoNula';
+        echo "<div class=\"sufee-alert alert with-close alert-danger alert-dismissible fade show\">
+                                            <span class=\"badge badge-pill badge-danger\">Erro!</span>
+                                                É necessário colocar toda a informação antes do envio da mensagem.
+                                              <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                                <span aria-hidden=\"true\">×</span>
+                                            </button>
+                                        </div>";
+    } ?>
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -151,8 +161,30 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                                 class=" form-control-label">Mensagem:</label><textarea
                                                 required name="textarea-input" id="textarea-input" rows="9"
                                                 maxlength="5000"
-                                                placeholder="Vim por este meio..." class="form-control"></textarea>
+                                                placeholder="Vim por este meio..."  class="form-control"></textarea>
                                     </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-12"><label class=" form-control-label">Requere resposta
+                                                do Encarregado de Educação:</label></div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check">
+                                                <div class="radio">
+                                                    <label for="radio1" class="form-check-label ">
+                                                        <input required type="radio" id="radio1" name="radios" value="ConfSim"
+                                                               class="form-check-input">Sim
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label for="radio2" class="form-check-label ">
+                                                        <input required type="radio" id="radio2" name="radios" value="ConfNao"
+                                                               class="form-check-input">Não
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-dot-circle-o"></i> Enviar
                                     </button>
@@ -166,7 +198,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
         </div><!-- /#right-panel -->
 
         <!-- Right Panel -->
-
 
         <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
@@ -221,6 +252,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
             });
 
         </script>
+
 
 </body>
 </html>

@@ -26,9 +26,6 @@
                         <a href="AdminTableEscolas.php"> <i class="menu-icon fa fa-building"></i>Escolas</a>
                     </li>
                     <li>
-                        <a href="AdminTableEstabelecimento.php"> <i class="menu-icon fa fa-hospital-o"></i>Estabelecimento</a>
-                    </li>
-                    <li>
                         <a href="AdminTableProfessores.php"> <i class="menu-icon fa fa-id-card-o"></i>Professores</a>
                     </li>
                     <li>

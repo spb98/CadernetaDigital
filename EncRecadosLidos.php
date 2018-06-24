@@ -82,6 +82,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                         <th>Mensagem</th>
                                         <th>Data de Envio</th>
                                         <th>Quando foi Lido</th>
+                                        <th>Ler/Mudar</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -103,15 +104,29 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
 
                                         if ($row2[8] === 'n') {
                                             $row2[8] = 'Por ler';
-                                            $row2[7] = '';
                                         } elseif ($row2[8] === 's') {
                                             $row2[8] = $row2[7];
                                         }
+                                        if ($row2[9] === 's') {
+                                            $row2[8] = $row2[8] . " e comparece.";
+                                        } elseif ($row2[9] === 'n'){
+                                            $row2[8] = $row2[8] . " e não comparece.";
+                                        }
+
+                                        $mensagemINC = mb_substr($row2[5], 0, 27) . "...";
 
                                         $datarow = $datarow . "<tr>
-                                                        <td>$row2[5]</td>
+                                                        <td>$mensagemINC</td>
                                                         <td>$row2[6]</td>
                                                         <td>$row2[8]</td>
+                                                        <td>
+                                                        <center><div class='btn-group' role='group' aria-label='...'>
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-lg btn-info'><i class=\"fa fa-eye\"></i></button></a>
+                                                        </button>
+                                                        </div>
+                                                        </center>
+                                                        </td>
+                                                        
                                                         </tr>";
                                     }
                                     echo $datarow;
@@ -125,6 +140,59 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                 </div>
             </div>
         </div><!-- .animated -->
+
+        <?php
+
+
+        $ID = $_SESSION["LoggedId"];
+
+        $sql = "SELECT * FROM encarregados WHERE IdUser = $ID ";
+        $results = mysqli_query($db, $sql);
+        $NecessarioID = mysqli_fetch_array($results);
+
+        //echo 'Id do enc:' . $NecessarioID['IdEncarregado'];
+        $_SESSION['IdEncarregado'] = $NecessarioID['IdEncarregado'];
+
+        $sql = "SELECT * FROM recados WHERE IdEncarregado = '$NecessarioID[IdEncarregado]'";
+        $results = mysqli_query($db, $sql);
+        $datarow = "";
+        while ($row2 = mysqli_fetch_array($results)) {
+            echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
+                    <div class=\"modal-dialog modal-lg\" role=\"document\">
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <h5 class=\"modal-title\" id=\"largeModalLabel\">Confirmação:</h5>
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                    <span aria-hidden=\"true\">&times;</span>
+                                </button>
+                            </div>
+                            <div class=\"modal-body\">
+                                <p>
+                                $row2[5]
+                                </p>
+                            </div>";
+            echo "<div class=\"modal-footer\">";
+
+            if ($row2[9] === "?"){
+                echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fechar</button>";
+            }elseif ($row2[9] === "s"){
+                echo "<form method=\"post\" action=\"EncRecadosLidosFunc.php?id=$row2[0]&comparece=n\">";
+                echo "<button type=\"submit\" class=\"btn btn-primary\">Não Comparecer</button>";
+                echo "</form>";
+                echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>";
+                }elseif ($row2[9] === 'n'){
+                echo "<form method=\"post\" action=\"EncRecadosLidosFunc.php?id=$row2[0]&comparece=s\">";
+                echo "<button type=\"submit\" class=\"btn btn-primary\">Comparecer</button>";
+                echo "</form>";
+                echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>";
+            }
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        ?>
+
     </div><!-- .content -->
 
 

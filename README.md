@@ -2,18 +2,24 @@
 
 Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
->Idealmente ser adicionado:
-  - Encarregados marcarem recados como aceites ou negados (Em casos de visitas de estudo,etc).
+>Erros:
+  - Arranjar uma condição do site em que não mostra os alunos se for da 2ª escola (Nos professores).
 
 >Em falta:
   - Verificar as condições em todos os inputs.
   - Traduzir o restante do site.
   - Verificar todos o texto escrito no site.
-  - Encher os dados da database com dados "Reais".
+  - Encher os restantes (40) recados na database e as fotos dos alunos.
   
 # Patchnotes
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
+
+>Versão 0.9
+> - Conteudos:
+>   - Atualizado a database.
+>   - Adicionado algumas condições de segurança.
+>   - Adicionado função de conferencia de recado (se deseja ir ou não).
 
 >Versão Beta 2.9
 > - Conteudos:

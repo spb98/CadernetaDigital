@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="help-block">Sexo do aluno que deverá ser adicionado</span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de nascimento do aluno:</label><input
-                            type="date" name="DataNascimento" value="<?php echo $row2[8]; ?>" class="form-control"><span
+                            type="date" name="DataNascimento" value="<?php echo $row2[8]; ?>"  class="form-control"><span
                             class="help-block">Data de nascimento do aluno que deverá ser adicionado</span></div>
 
                 <?php
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $foto;
                 ?>
                 <div class="form-group"><label for="file-input" class=" form-control-label">Foto:</label>
-                    <input type="file" id="file-input" name="Foto" class="form-control-file">
+                    <input type="file" id="file-input" name="Foto"   ng-model="image" accept="image/*" class="form-control-file">
                     <span class="help-block">Foto do aluno que deverá ser adicionado</span></div>
             </div>
             <div class="card-footer">
@@ -147,13 +147,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
 </div><!-- .animated -->
+
+<script type="text/javascript">
+    $('#file-input').click( function() {
+        //check whether browser fully supports all File API
+        if (window.File && window.FileReader && window.FileList && window.Blob)
+        {
+            //get the file size and file type from file input field
+            var fsize = $('#file-input')[0].files[0].size;
+
+            if(fsize>1048576) //do something if file size more than 1 mb (1048576)
+            {
+                alert(fsize +" bites\nToo big!");
+            }else{
+                alert(fsize +" bites\nYou are good to go!");
+            }
+        }else{
+            alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+        }
+    });
+</script>
+
+
 </div><!-- .content -->
 
 
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->
-
 
 <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
 <script src="assets/js/popper.min.js"></script>

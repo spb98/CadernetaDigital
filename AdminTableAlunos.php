@@ -25,6 +25,9 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'ERRO') {
         $_SESSION['ActionTaken'] = 'AcaoNula';
         echo 'onload="errorMessage();"';
+    } elseif (isset($_SESSION['ActionTaken']) && $_SESSION['ActionTaken'] === 'FILE') {
+        $_SESSION['ActionTaken'] = 'AcaoNula';
+        echo 'onload="fileMessage();"';
     }
 
     if (isset($_GET['delete'])) {
@@ -105,7 +108,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                     <tr>
                                         <th>Nome</th>
                                         <th>Morada</th>
-                                        <th>Foto</th>
+                                        <th>Localidade</th>
                                         <th>Ação</th>
                                     </tr>
                                     </thead>
@@ -121,11 +124,11 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                         $datarow = $datarow . "<tr>
                                                         <td>$row2[3]</td>
                                                         <td>$row2[4]</td>
-                                                        <td style='height: 75px; width: 75px;'>$foto</td>
+                                                        <td>$row2[5]</td>
                                                         <td><center>
                                                             <div class='btn-group' role='group' aria-label='...'>
-                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-eye\"></i></button></a></button >
-                                                           </div >
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-eye\"></i></button></a></button>
+                                                           </div>
                                                             <button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><i class=\"fa fa-pencil\"></i>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
                                                             
@@ -143,7 +146,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="btn btn-success btn-sm">
                         <i class="fa  fa-plus"></i> Adicionar
                     </button>
-                </div>
+
             </div>
             <br>
         </div><!-- .animated -->
@@ -185,7 +188,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                  <br>
                                  Data de nascimento do aluno: $row2[8]
                                  <br>
-                                 Foto: <p style='height: 200px; width: 200px;'>$foto</p>
+                                 Foto: <p><center>$foto</center></p>
                             </div>
                             <div class=\"modal-footer\">
                                 <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">OK</button>
@@ -263,8 +266,11 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
         alertify.error('Erro Ocurrido.');
     }
 
+    function fileMessage() {
+        alertify.warning('Imagem muito grande.');
+    }
+
 </script>
 
 </body>
 </html>
-

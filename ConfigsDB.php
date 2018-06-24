@@ -4,8 +4,8 @@ session_start();
 //Define as variaveis para entrar na database
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'toor123');
-define('DB_DATABASE', '123');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'dtbpap');
 
 //Entra na database
 $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);

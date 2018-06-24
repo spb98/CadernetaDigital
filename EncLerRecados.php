@@ -115,7 +115,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                                         <td>$row2[8]</td>
                                                         <td>
                                                         <center><div class='btn-group' role='group' aria-label='...'>
-                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-success'><i class=\"fa fa-check\"></i></button></a>
+                                                        <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-lg btn-info'><i class=\"fa fa-eye\"></i></button></a>
                                                         </button>
                                                         </div>
                                                         </center>
@@ -149,7 +149,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
 
         $sql = "SELECT * FROM recados WHERE IdEncarregado = '$NecessarioID[IdEncarregado]'";
         $results = mysqli_query($db, $sql);
-        $_SESSION['CLICADO'] = "1";
         $datarow = "";
         while ($row2 = mysqli_fetch_array($results)) {
             echo "<div class=\"modal fade\" id=\"view$row2[0]\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"largeModalLabel\" aria-hidden=\"true\">
@@ -165,16 +164,27 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                                 <p>
                                 $row2[5]
                                 </p>
-                            </div>
-                            <div class=\"modal-footer\">
-                                <form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]\">
-                                <button type=\"submit\" class=\"btn btn-primary\">Marcar como Lido</button>
-                                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>";
+                            </div>";
+            echo "<div class=\"modal-footer\">";
+
+            if ($row2[9] === "?"){
+                echo "<form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]&comparece=$row2[9]\">";
+                echo "<button type=\"submit\" class=\"btn btn-primary\">Marcar como Lido</button>";
+                echo "</form>";
+            }elseif ($row2[9] === "m"){
+                echo "<form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]&comparece=s\">";
+                echo "<button type=\"submit\" class=\"btn btn-success\">Comparecer</button>";
+                echo "</form>";
+                echo "<form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]&comparece=n\">";
+                echo "<button type=\"submit\" class=\"btn btn-danger\">Não Comparecer</button>";
+                echo "</form>";
+            }
+
+            echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
         }
         ?>
 

@@ -7,16 +7,26 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
     header("location: LogoutFunc.php");
 }
 
-//Mostra o id do encarregado e do id a marcar.
-//echo $_SESSION['IdEncarregado'] . "<br>" . $_GET['id'];
-
 $idEncarregado = $_SESSION['IdEncarregado'];
 $idRecados = $_GET['id'];
+$comparece = $_GET['comparece'];
 $hoje = date("Y-m-d");
 
-$sql = "UPDATE recados SET Lido = 's', DataConfirmacao='$hoje' WHERE IdEncarregado ='$idEncarregado' AND IdRecado = '$idRecados'";
+//Mostra os dados.
+/*
+echo "O ID do encarregado é: " . $idEncarregado . "<br>";
+echo "O ID do recado é: " . $idRecados . "<br>";
+echo "Hoje é dia: " . $hoje . "<br>";
+echo "O comparecimento é : " . $comparece . "<br>";
+*/
+
+$sql = "UPDATE recados SET Lido = 's', DataConfirmacao='$hoje', Comparece='$comparece' WHERE IdEncarregado ='$idEncarregado' AND IdRecado = '$idRecados'";
+
+
+
 
 $results = mysqli_query($db, $sql);
+
 
 if (mysqli_query($db, $sql)) {
     //echo "Record updated successfully";
@@ -26,4 +36,6 @@ if (mysqli_query($db, $sql)) {
     echo "Error updating record: " . mysqli_error($db);
     $_SESSION['ActionTaken'] = 'ERRO';
     //header("location: EncLerRecados.php");
+
+
 }

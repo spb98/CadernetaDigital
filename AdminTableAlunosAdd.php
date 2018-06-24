@@ -109,7 +109,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Data de nascimento do aluno que deverá ser adicionado</span></div>
 
                 <div class="form-group"><label for="file-input" class=" form-control-label">Foto:</label>
-                    <input type="file" id="file-input" name="Foto" class="form-control-file">
+                    <input type="file" id="file-input" data-max-size="2048"  ng-model="image" accept="image/*" name="Foto" class="form-control-file">
                     <span class="help-block">Foto do aluno que deverá ser adicionado</span></div>
             </div>
 
