@@ -2,20 +2,20 @@
 
 Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
->Erros:
-  - Arranjar uma condição do site em que não mostra os alunos se for da 2ª escola (Nos professores).
-
 >Em falta:
   - Verificar as condições em todos os inputs.
   - Traduzir o restante do site.
   - Verificar todos o texto escrito no site.
-  - Encher os restantes (40) recados na database e as fotos dos alunos.
   
 # Patchnotes
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
 
->Versão 0.9
+>Versão 0.95 Full
+> - Conteudos:
+>   - Erros corrigidos.
+
+>Versão 0.9 Full
 > - Conteudos:
 >   - Atualizado a database.
 >   - Adicionado algumas condições de segurança.

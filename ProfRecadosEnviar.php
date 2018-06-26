@@ -71,7 +71,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
     } ?>
     <div class="content mt-3">
         <div class="animated fadeIn">
-            <div class="row">
+            <div  class="row">
                 <div class="col-md-12">
                     <form method="post" action="ProfRecadosEnviarFunc.php">
                         <div class="col-lg-12">
@@ -95,8 +95,8 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                                 $datarow = "";
 
-                                                while ($row2 = mysqli_fetch_array($results)) {
-                                                    $datarow = $datarow . "<option value='$row2[0]' >$row2[1]</option>";
+                                                while ($row0 = mysqli_fetch_array($results)) {
+                                                    $datarow = $datarow . "<option value='$row0[0]' >$row0[1]</option>";
                                                 }
                                                 echo $datarow;
                                                 ?>
@@ -114,14 +114,13 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                         echo "<div class=\"col col-md-12\"><label for=\"select\" class=\" form-control-label\">Turma:</label>";
                                         echo "</div>";
                                         echo "<div class=\"col-12 col-md-3\">";
-                                        echo "<select name=\"turma[]\" id='classselector' class=\"form-control\">";
+                                        echo "<select name=\"turma\" id='classselector[]' class=\"form-control\">";
                                         echo "<option value=\"\">Selecione a turma...</option>";
 
                                         $idprofessor = $_SESSION['IDProf'];
 
-                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscola = '$row[0]'";
+                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor'";
                                         $results2 = mysqli_query($db, $sql2);
-
                                         while ($row2 = mysqli_fetch_array($results2)) {
                                             echo "<option value='$row2[0]' >$row2[3]º$row2[4]</option>";
                                         }
@@ -161,7 +160,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                                 class=" form-control-label">Mensagem:</label><textarea
                                                 required name="textarea-input" id="textarea-input" rows="9"
                                                 maxlength="5000"
-                                                placeholder="Vim por este meio..."  class="form-control"></textarea>
+                                                placeholder="Vim por este meio..." class="form-control"></textarea>
                                     </div>
 
                                     <div class="row form-group">
@@ -171,13 +170,15 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
                                             <div class="form-check">
                                                 <div class="radio">
                                                     <label for="radio1" class="form-check-label ">
-                                                        <input required type="radio" id="radio1" name="radios" value="ConfSim"
+                                                        <input required type="radio" id="radio1" name="radios"
+                                                               value="ConfSim"
                                                                class="form-check-input">Sim
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label for="radio2" class="form-check-label ">
-                                                        <input required type="radio" id="radio2" name="radios" value="ConfNao"
+                                                        <input required type="radio" id="radio2" name="radios"
+                                                               value="ConfNao"
                                                                class="form-check-input">Não
                                                     </label>
                                                 </div>
@@ -204,7 +205,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
 
-
         <script src="assets/js/lib/data-table/datatables.min.js"></script>
         <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
         <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
@@ -216,13 +216,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
         <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
         <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
         <script src="assets/js/lib/data-table/datatables-init.js"></script>
-
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#bootstrap-data-table-export').DataTable();
-            });
-        </script>
 
 
         <script>
@@ -244,15 +237,17 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
             });
 
             $(function () {
-                $('#classselector').change(function () {
+                $('[id*="classselector"]').change(function () {
                     $('.alunos').hide();
+                    //alert("Teste");
                     $('#' + 'alunos' + $(this).val()).show();
                     $('input:checkbox').removeAttr('checked');
                 });
             });
 
         </script>
-
-
 </body>
+
+
+
 </html>

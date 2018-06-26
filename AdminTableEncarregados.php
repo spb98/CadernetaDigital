@@ -166,8 +166,6 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             <div class=\"modal-body\">
                                  ID do encarregado: $row2[0]
                                  <br>
-                                 ID do aluno: $row2[1]
-                                 <br>
                                  ID da user: $row2[2]
                                  <br>
                                  Localidade do encarregado: $row2[3]
