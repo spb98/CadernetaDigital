@@ -3,13 +3,18 @@
 Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
 >Em falta:
-  - Verificar as condições em todos os inputs.
   - Traduzir o restante do site.
-  - Verificar todos o texto escrito no site.
   
 # Patchnotes
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
+
+>Versão 0.96 Full
+> - Conteudos:
+>   - Removido a tabela estabelecimento por não ter atual uso.
+>   - Na tabela recados para os administradores agora é usado uma textarea em vez de um input para a mensagem.
+>   - Texto todo aparentemente corrigido.
+>   - Traduzido todo o site com uma única excessão (O "All" no dropdown das tabelas).
 
 >Versão 0.95 Full
 > - Conteudos:

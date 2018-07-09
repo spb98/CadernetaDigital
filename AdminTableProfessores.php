@@ -1,7 +1,7 @@
 <?php include("ConfigsDoctype.php");?>
 <?php include("ConfigsDB.php");
 
-//Verifica se o user tem o login feito e credenciais
+//Verifica se o utilizador tem o login feito e credenciais
 
 if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     echo 'Erro de credenciais.';
@@ -163,7 +163,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             <div class=\"modal-body\">
                                  ID do professor: $row2[0]
                                  <br>
-                                 ID do user: $row2[1]
+                                 ID do utilizador: $row2[1]
                                  <br>
                                  Nome do professor: $row2[2]
                             </div>

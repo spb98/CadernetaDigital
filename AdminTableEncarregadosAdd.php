@@ -1,7 +1,7 @@
 <?php include("ConfigsDoctype.php"); ?>
 <?php include("ConfigsDB.php");
 
-//Verifica se o user tem o login feito e credenciais
+//Verifica se o utilizador tem o login feito e credenciais
 
 if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     echo 'Erro de credenciais.';
@@ -62,36 +62,36 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <form method="post" class="" action="AdminTableEncarregadosAddFunc.php" enctype="multipart/form-data">
         <div class="card">
             <div class="card-header">
-                <strong>Adicionar </strong> encarregado:
+                <strong>Adicionar </strong> encarregado de educação:
             </div>
             <div class="card-body card-block">
-                <div class="form-group"><label class="form-control-label">ID do Encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">ID do encarregado de educação:</label><input
                             type="number" disabled placeholder="Automático" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
-                <div class="form-group"><label class="form-control-label">ID do User:</label><input
+                <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
                             type="number" name="IdUser" placeholder="Exemplo: 2" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um User na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a um utilizador na base de dados.</span></div>
 
-                <div class="form-group"><label class="form-control-label">Nome do encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">Nome do encarregado de educação:</label><input
                             type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
                             class="form-control"><span
-                            class="help-block">Nome do encarregado que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label class="form-control-label">Sexo do encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">Sexo do encarregado de educação:</label><input
                             type="text" maxlength="10" name="Sexo" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
-                            class="help-block">Sexo do encarregado que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label class="form-control-label">Morada do encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">Morada do encarregado de educação:</label><input
                             type="text" maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
-                            class="help-block">Morada do encarregado que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label class="form-control-label">Localidade do encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">Localidade do encarregado de educação:</label><input
                             type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
-                            class="help-block">Localidade do encarregado que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
 
             </div>

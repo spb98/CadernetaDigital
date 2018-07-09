@@ -96,7 +96,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Users</strong>
+                            <strong class="card-title">Utilizadores</strong>
                         </div>
                         <div class="card-body">
                             <form method="post" action="AdminTableUsersEdit.php">
@@ -162,7 +162,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                 </button>
                             </div>
                             <div class=\"modal-body\">
-                                 ID do user: $row2[0]
+                                 ID do utilizador: $row2[0]
                                  <br>
                                  Username: $row2[1]
                                  <br>

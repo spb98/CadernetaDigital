@@ -19,6 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Lido = mysqli_real_escape_string($db, $_POST['Lido']);
     $Comparece = mysqli_real_escape_string($db, $_POST['Comparece']);
 
+
+    //echo $Mensagem . '<br><br>';
+
     $sql = "UPDATE recados SET IdProfessor ='$IdProfessor', IdEscola='$IdEscola', IdEncarregado='$IdEncarregado',IdAluno='$IdAluno' ,
 Mensagem='$Mensagem', DataEnvio='$DataEnvio', DataConfirmacao='$DataConfirmacao', Lido='$Lido', Comparece ='$Comparece'
             WHERE IdRecado ='$id'";

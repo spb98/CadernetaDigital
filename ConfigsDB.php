@@ -2,16 +2,22 @@
 session_start();
 
 //Define as variaveis para entrar na database
+
+//O servidor
 define('DB_SERVER', 'localhost');
+
+//Username para entrar no servidor
 define('DB_USERNAME', 'root');
+//Password para entrar no servidor
 define('DB_PASSWORD', '');
-define('DB_DATABASE', '123');
+//Nome da base de dados (no caso de testes usavamos uma base de dados com o nome "123")
+define('DB_DATABASE', 'dtbpap');
 
 //Entra na database
 $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 if (mysqli_ping($db)) {
-    //echo 'Our connection is ok!';
+    //echo 'Entrou na base de dados com sucesso!';
 } else {
     echo 'ERRO na conexão!';
 }

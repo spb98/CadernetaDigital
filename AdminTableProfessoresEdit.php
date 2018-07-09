@@ -83,18 +83,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card-body card-block">
                 <div class="form-group"><label class="form-control-label">ID do professor:</label><input
                             type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
-                            class="help-block">Valor deverá ser mantido porque foi inserido automaticamente pela base de dados</span>
+                            class="help-block">Valor deverá ser mantido uma vez que foi inserido automaticamente.</span>
                 </div>
 
-                <div class="form-group"><label class="form-control-label">ID do User:</label><input
+                <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
                             type="number" name="IdUser" value="<?php echo $row2[1]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um user na base de dados</span>
+                            class="help-block">Valor númerico que corresponde a um utilizador na base de dados</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Nome do professor:</label><input
                             type="text" maxlength="100" name="Nome" value="<?php echo $row2[2]; ?>"
                             class="form-control"><span
-                            class="help-block">Nome do encarregado que deverá ser inserido acima</span></div>
+                            class="help-block"></span></div>
 
             </div>
             <div class="card-footer">

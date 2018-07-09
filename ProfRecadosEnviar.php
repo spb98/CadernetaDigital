@@ -119,7 +119,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '1') {
 
                                         $idprofessor = $_SESSION['IDProf'];
 
-                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor'";
+                                        $sql2 = "SELECT * FROM turmas WHERE IdProfessor = '$idprofessor' AND IdEscola = '$row[0]'";
                                         $results2 = mysqli_query($db, $sql2);
                                         while ($row2 = mysqli_fetch_array($results2)) {
                                             echo "<option value='$row2[0]' >$row2[3]º$row2[4]</option>";

@@ -82,30 +82,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <strong>Editar </strong> escola:
             </div>
             <div class="card-body card-block">
-                <div class="form-group"><label class="form-control-label">ID da Escola:</label><input
+                <div class="form-group"><label class="form-control-label">ID da escola:</label><input
                             type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor deverá ser mantido uma vez que foi inserido automaticamente.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Designação da escola:</label><input
                             type="text" maxlength="100" name="Designacao"
                             value="<?php echo $row2[1]; ?>"
                             class="form-control"><span
-                            class="help-block">Designação da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
+                <div class="form-group"><label class="form-control-label">Localidade da escola:</label><input
                             type="text" maxlength="100" name="Localidade" value="<?php echo $row2[2]; ?>"
                             class="form-control"><span
-                            class="help-block">Localidade da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Contacto da escola:</label><input
-                            type="number" maxlength="20" name="Contacto" value="<?php echo $row2[3]; ?>"
+                            type="number" name="Contacto" value="<?php echo $row2[3]; ?>"
                             class="form-control"><span
-                            class="help-block">Contacto da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Email da escola:</label><input
                             type="email" maxlength="100" name="Email" value="<?php echo $row2[4]; ?>"
                             class="form-control"><span
-                            class="help-block">Email da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
             </div>
 

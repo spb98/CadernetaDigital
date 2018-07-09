@@ -82,53 +82,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card-body card-block">
                 <div class="form-group"><label class="form-control-label">ID do Aluno:</label><input
                             type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
-                            class="help-block">Valor deverá ser mantido porque foi inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor deverá ser mantido uma vez que foi inserido automaticamente.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do Encarregado:</label><input
                             type="number" name="IdEncarregado" value="<?php echo $row2[1]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados</span>
+                            class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID da Turma:</label><input
                             type="number" name="IdTurma" value="<?php echo $row2[2]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a uma turma na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a uma turma na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Nome do aluno:</label><input
                             type="text" maxlength="100" name="Nome" value="<?php echo $row2[3]; ?>"
                             class="form-control"><span
-                            class="help-block">Nome do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Morada do aluno:</label><input
                             type="text" maxlength="100" name="Morada" value="<?php echo $row2[4]; ?>"
                             class="form-control"><span
-                            class="help-block">Morada do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
                             type="text" maxlength="100" name="Localidade" value="<?php echo $row2[5]; ?>"
                             class="form-control"><span
-                            class="help-block">Localidade do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Cartão de Cidadão do aluno:</label><input
                             type="text" maxlength="20" name="CC" value="<?php echo $row2[6]; ?>"
                             class="form-control"><span
-                            class="help-block">Cartão de Cidadão do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Sexo do aluno:</label><input
                             type="text" maxlength="10" name="Sexo" value="<?php echo $row2[7]; ?>"
                             class="form-control"><span
-                            class="help-block">Sexo do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de nascimento do aluno:</label><input
                             type="date" name="DataNascimento" value="<?php echo $row2[8]; ?>"  class="form-control"><span
-                            class="help-block">Data de nascimento do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <?php
                 $foto = '<img style=\'height: 10%; width: 10%;\' src="data:image/jpeg;base64,' . base64_encode($row2['Foto']) . '"/>';
                 echo $foto;
                 ?>
-                <div class="form-group"><label for="file-input" class=" form-control-label">Foto:</label>
+                <div class="form-group"><label for="file-input" class=" form-control-label">Foto do aluno:</label>
                     <input type="file" id="file-input" name="Foto"   ng-model="image" accept="image/*" class="form-control-file">
-                    <span class="help-block">Foto do aluno que deverá ser adicionado</span></div>
+                    <span class="help-block"></span></div>
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">

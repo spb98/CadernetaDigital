@@ -78,33 +78,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           enctype="multipart/form-data">
         <div class="card">
             <div class="card-header">
-                <strong>Editar </strong> user:
+                <strong>Editar </strong> utilizador:
             </div>
             <div class="card-body card-block">
-                <div class="form-group"><label class="form-control-label">ID do user:</label><input
+                <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
                             type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor deverá ser mantido uma vez que foi inserido automaticamente.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Username:</label><input
                             type="text" name="Username" value="<?php echo $row2[1]; ?>"
                             class="form-control"><span
-                            class="help-block">Corresponde ao username a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Password:</label><input
                             type="password" name="Password" value="<?php echo $row2[2]; ?>"
                             class="form-control"><span
-                            class="help-block">Corresponde á password a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Email:</label><input
                             type="email" name="Email" value="<?php echo $row2[3]; ?>" class="form-control"><span
-                            class="help-block">Corresponde ao email a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Nível:</label><input
                             type="number" name="Nivel" value="<?php echo $row2[4]; ?>" class="form-control"><span
-                            class="help-block">Corresponde ao nível a ser adicionado</span></div>
+                            class="help-block">Corresponde ao nível (0/1/2):</span><br>
+                    <span class="help-block">O '0' corresponde ao nível de administrador.</span><br>
+                    <span class="help-block">O '1' corresponde ao nível de professor.</span><br>
+                    <span class="help-block">O '2' corresponde ao nível de encarregado de educação.</span>
+                </div>
             </div>
 
             <div class="card-footer">

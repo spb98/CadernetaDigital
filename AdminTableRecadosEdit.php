@@ -84,51 +84,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card-body card-block">
                 <div class="form-group"><label class="form-control-label">ID do recado:</label><input
                             type="number" disabled value="<?php echo $row2[0]; ?>" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor deverá ser mantido uma vez que foi inserido automaticamente.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do professor:</label><input
                             type="number" name="IdProfessor" value="<?php echo $row2[1]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
+                            class="help-block">Valor númerico que corresponde a um professor na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID da escola:</label><input
                             type="number" name="IdEscola" value="<?php echo $row2[2]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um escola na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a uma escola na base de dados.</span></div>
 
-                <div class="form-group"><label class="form-control-label">ID do encarregado:</label><input
+                <div class="form-group"><label class="form-control-label">ID do encarregado de educação:</label><input
                             type="number" name="IdEncarregado" value="<?php echo $row2[3]; ?>"
                             class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um encarregado na base de dados</span>
+                            class="help-block">Valor númerico que corresponde a um encarregado de educação na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID do aluno:</label><input
                             type="number" name="IdAluno" value="<?php echo $row2[4]; ?>" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um aluno na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a um aluno na base de dados.</span></div>
 
-                <div class="form-group"><label class="form-control-label">Mensagem:</label><input
-                            type="text" maxlength="100" name="Mensagem" value="<?php echo $row2[5]; ?>"
-                            class="form-control"><span
-                            class="help-block">Mensagem do professor que deverá ser adicionado</span></div>
+                <div class="form-group"><label class="form-control-label">Recado:</label><textarea
+                            type="text" name="Mensagem" rows="9"
+                            maxlength="5000"
+                            class="form-control"><?php echo $row2[5]; ?></textarea><span
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de Envio:</label><input
                             type="date" name="DataEnvio" value="<?php echo $row2[6]; ?>"
                             class="form-control"><span
-                            class="help-block">Se o recado foi lido</span></div>
+                            class="help-block">Quando o recado foi enviado.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de Confirmação:</label><input
                             type="date" name="DataConfirmacao" value="<?php echo $row2[7]; ?>"
                             class="form-control"><span
-                            class="help-block">Se o recado foi lido</span></div>
+                            class="help-block">Quando a resposta foi dada.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Se foi lido:</label><input
                             type="text" maxlength="1" name="Lido" value="<?php echo $row2[8]; ?>"
                             class="form-control"><span
-                            class="help-block">Se o recado foi lido</span></div>
+                            class="help-block">Se o recado foi lido (s/n):</span><br>
+                    <span class="help-block">O 's' corresponde a um recado lido.</span><br>
+                    <span class="help-block">O 'n' corresponde a um recado não lido.</span><br>
+                </div>
 
-                <div class="form-group"><label class="form-control-label">Se tem confirmação:</label><input
+                <div class="form-group"><label class="form-control-label">Comparecimento:</label><input
                             type="text" maxlength="1" name="Comparece" value="<?php echo $row2[9]; ?>"
-                            class="form-control"><span
-                            class="help-block">Se o encarregado comparece ou não (s/n/?/.) que deverá ser adicionado</span>
+                            class="form-control"><span class="help-block">Se o encarregado comparece ou não (s/n/?/m):</span><br>
+                    <span class="help-block">O 's' corresponde a foi preciso comparecer e comparece.</span><br>
+                    <span class="help-block">O 'n' corresponde a foi preciso comparecer e não comparece.</span><br>
+                    <span class="help-block">O '?' corresponde a não ser preciso comparecer.</span><br>
+                    <span class="help-block">O 'm' corresponde a ser necessário comparecimento  mas não foi respondido ainda.</span>
+
                 </div>
 
             </div>

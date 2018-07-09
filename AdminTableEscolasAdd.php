@@ -64,30 +64,30 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                 <strong>Adicionar </strong> escola:
             </div>
             <div class="card-body card-block">
-                <div class="form-group"><label class="form-control-label">ID da Escola:</label><input
+                <div class="form-group"><label class="form-control-label">ID da escola:</label><input
                             type="number" disabled placeholder="Automático" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Designação da escola:</label><input
                             type="text" maxlength="100" name="Designacao"
                             placeholder="Exemplo: Escola Básica e Secundária da Batalha"
                             class="form-control"><span
-                            class="help-block">Designação da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
+                <div class="form-group"><label class="form-control-label">Localidade da escola:</label><input
                             type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
-                            class="help-block">Localidade da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Contacto da escola:</label><input
-                            type="number" maxlength="20" name="Contacto" placeholder="Exemplo: XXXXXXXXX"
+                            type="number" name="Contacto" placeholder="Exemplo: XXXXXXXXX"
                             class="form-control"><span
-                            class="help-block">Contacto da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Email da escola:</label><input
                             type="email" maxlength="100" name="Email" placeholder="Exemplo: es3batalha@gmail.com"
                             class="form-control"><span
-                            class="help-block">Email da escola que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
             </div>
 

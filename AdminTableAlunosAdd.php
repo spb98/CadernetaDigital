@@ -68,49 +68,49 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             <div class="card-body card-block">
                 <div class="form-group"><label class="form-control-label">ID do Aluno:</label><input
                             type="number" disabled placeholder="Automático" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do Encarregado:</label><input
                             type="number" name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados</span>
+                            class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID da Turma:</label><input
                             type="number" name="IdTurma" placeholder="Exemplo: 1" class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a uma turma na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a uma turma na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Nome do aluno:</label><input
                             type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
                             class="form-control"><span
-                            class="help-block">Nome do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Morada do aluno:</label><input
                             type="text" maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
-                            class="help-block">Morada do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
                             type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
-                            class="help-block">Localidade do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Cartão de Cidadão do aluno:</label><input
                             type="text" maxlength="20" name="CC" placeholder="Exemplo: XXXXXXXX XXXX"
                             class="form-control"><span
-                            class="help-block">Cartão de Cidadão do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Sexo do aluno:</label><input
                             type="text" maxlength="10" name="Sexo" placeholder="Exemplo: Masculino"
                             class="form-control"><span
-                            class="help-block">Sexo do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de nascimento do aluno:</label><input
                             type="date" name="DataNascimento" class="form-control"><span
-                            class="help-block">Data de nascimento do aluno que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
 
-                <div class="form-group"><label for="file-input" class=" form-control-label">Foto:</label>
-                    <input type="file" id="file-input" data-max-size="2048"  ng-model="image" accept="image/*" name="Foto" class="form-control-file">
-                    <span class="help-block">Foto do aluno que deverá ser adicionado</span></div>
+                <div class="form-group"><label for="file-input" class=" form-control-label">Foto do aluno:</label>
+                    <input type="file" id="file-input" ng-model="image" accept="image/*" name="Foto" class="form-control-file">
+                    <span class="help-block"></span></div>
             </div>
 
             <div class="card-footer">

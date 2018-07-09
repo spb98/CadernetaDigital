@@ -95,14 +95,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
                 </div>
 
-                <div class="form-group"><label class="form-control-label">Ano da turma:</label><input
+                <div class="form-group"><label class="form-control-label">Ano:</label><input
                             type="number" name="Ano" value="<?php echo $row2[3]; ?>" class="form-control"><span
                             class="help-block">Valor númerico que corresponde ao ano da turma</span>
                 </div>
 
-                <div class="form-group"><label class="form-control-label">A turma correspondente ao ano:</label><input
-                            type="text" name="Turma" value="<?php echo $row2[4]; ?>" class="form-control"><span
-                            class="help-block">Valor que corresponde a uma turma</span></div>
+                <div class="form-group"><label class="form-control-label">Turma:</label><input
+                            type="text" maxlength="1" name="Turma" value="<?php echo $row2[4]; ?>" class="form-control"><span
+                            class="help-block">Letra correspondente a uma turma</span></div>
             </div>
 
             <div class="card-footer">

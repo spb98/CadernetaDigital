@@ -62,33 +62,37 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
     <form method="post" class="" action="AdminTableUsersAddFunc.php" enctype="multipart/form-data">
         <div class="card">
             <div class="card-header">
-                <strong>Adicionar </strong> user:
+                <strong>Adicionar </strong> utilizador:
             </div>
             <div class="card-body card-block">
-                <div class="form-group"><label class="form-control-label">ID do user:</label><input
+                <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
                             type="number" disabled placeholder="Automático" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Username:</label><input
                             type="text" name="Username" placeholder="Exemplo: professor123123"
                             class="form-control"><span
-                            class="help-block">Corresponde ao username a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Password:</label><input
                             type="password" name="Password" placeholder="Exemplo: password123"
                             class="form-control"><span
-                            class="help-block">Corresponde á password a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Email:</label><input
                             type="email" name="Email" placeholder="Exemplo: asdasd@gmail.com" class="form-control"><span
-                            class="help-block">Corresponde ao email a ser adicionado</span>
+                            class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Nível:</label><input
                             type="number" name="Nivel" placeholder="Exemplo: 0" class="form-control"><span
-                            class="help-block">Corresponde ao nível a ser adicionado</span></div>
+                            class="help-block">Corresponde ao nível (0/1/2):</span><br>
+                    <span class="help-block">O '0' corresponde ao nível de administrador.</span><br>
+                    <span class="help-block">O '1' corresponde ao nível de professor.</span><br>
+                    <span class="help-block">O '2' corresponde ao nível de encarregado de educação.</span>
+                </div>
             </div>
 
             <div class="card-footer">

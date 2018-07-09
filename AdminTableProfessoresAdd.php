@@ -68,18 +68,17 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
             <div class="card-body card-block">
                 <div class="form-group"><label class="form-control-label">ID do professor:</label><input
                             type="number" disabled placeholder="Automático" class="form-control"><span
-                            class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
+                            class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
-                <div class="form-group"><label class="form-control-label">ID do User:</label><input
-                            type="number" maxlength="100" name="IdUser"
-                            placeholder="Exemplo: 1"
+                <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
+                            type="number" name="IdUser" placeholder="Exemplo: 1"
                             class="form-control"><span
-                            class="help-block">Valor númerico que corresponde a um User na base de dados</span></div>
+                            class="help-block">Valor númerico que corresponde a um utilizador na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Nome do professor:</label><input
                             type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
                             class="form-control"><span
-                            class="help-block">Nome do professor que deverá ser adicionado</span></div>
+                            class="help-block"></span></div>
             </div>
 
             <div class="card-footer">
