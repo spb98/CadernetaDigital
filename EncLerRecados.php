@@ -171,6 +171,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                 echo "<form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]&comparece=$row2[9]\">";
                 echo "<button type=\"submit\" class=\"btn btn-primary\">Marcar como Lido</button>";
                 echo "</form>";
+                echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>";
             }elseif ($row2[9] === "m"){
                 echo "<form method=\"post\" action=\"EncLerRecadosFunc.php?id=$row2[0]&comparece=s\">";
                 echo "<button type=\"submit\" class=\"btn btn-success\">Comparecer</button>";
@@ -180,7 +181,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '2') {
                 echo "</form>";
             }
 
-            echo "<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancelar</button>";
+
             echo "</div>";
             echo "</div>";
             echo "</div>";

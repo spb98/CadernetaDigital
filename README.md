@@ -9,6 +9,10 @@ Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
 
+>Versão 0.96.1 Full
+> - Conteudos:
+>   - Arranjado o modal dos encarregados de educação.
+
 >Versão 0.96 Full
 > - Conteudos:
 >   - Removido a tabela estabelecimento por não ter atual uso.
