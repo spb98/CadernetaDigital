@@ -20,11 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //verificar as propriedades da imagem
     $check = getimagesize($_FILES["Foto"]["tmp_name"]);
-    if (filesize ($_FILES["Foto"]["tmp_name"]) > 15000 ){
-        echo "File muito grande....<br><br>";
-        $_SESSION['ActionTaken'] = 'FILE';
-        //header("location: AdminTableAlunos.php");
-    } elseif ($check !== false) {
+    if ($check !== false) {
         $image = $_FILES['Foto']['tmp_name'];
         $foto = addslashes(file_get_contents($image));
     }
@@ -39,10 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (mysqli_query($db, $sql)) {
             echo "Record updated successfully";
-            if (!($_SESSION['ActionTaken'] = 'FILE')){
-                $_SESSION['ActionTaken'] = 'SimEditar';
-            }
+            $_SESSION['ActionTaken'] = 'SimEditar';
             header("location: AdminTableAlunos.php");
+
         } else {
             echo "Error updating record: " . mysqli_error($db);
             $_SESSION['ActionTaken'] = 'ERRO';

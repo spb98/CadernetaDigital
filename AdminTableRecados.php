@@ -120,7 +120,7 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                                                             <div class='btn-group' role='group' aria-label='...'>
                                                         <a href=\"#view$row2[0]\" data-toggle=\"modal\"><button type='button' class='btn btn-info'><i class=\"fa fa-eye\"></i></button></a></button >
                                                            </div >
-                                                            <button value='$row2[0]' type='submit' name='edit' class=\"btn btn-default\"><i class=\"fa fa-pencil\"></i>
+                                                            <button value='$row2[0]' type='submit' name='edit' class=\"btn btn-dark\"><i class=\"fa fa-pencil\"></i></button>
                                                             <button id='delete$row2[0]' onclick='check(this);' value='$row2[0]' type='button' name='delete' class=\"btn btn-danger\"><i class=\"fa fa-trash\"></i></button>
                                                             
                                                         </center></td> 

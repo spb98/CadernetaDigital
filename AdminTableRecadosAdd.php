@@ -71,48 +71,48 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do professor:</label><input
-                            type="number" name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um professor na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID da escola:</label><input
-                            type="number" name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a uma escola na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do encarregado de educação:</label><input
-                            type="number" name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um encarregado de educação na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID do aluno:</label><input
-                            type="number" name="IdAluno" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdAluno" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um aluno na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Recado:</label><textarea
-                            type="text" name="Mensagem" rows="9" placeholder="Exemplo: Vim por este meio..."
+                            type="text" required name="Mensagem" rows="9" placeholder="Exemplo: Vim por este meio..."
                             maxlength="5000"
                             class="form-control"></textarea><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de Envio:</label><input
-                            type="date" name="DataEnvio"
+                            type="date" required name="DataEnvio"
                             class="form-control"><span
                             class="help-block">Quando o recado foi enviado.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de Confirmação:</label><input
-                            type="date" name="DataConfirmacao"
+                            type="date" required name="DataConfirmacao"
                             class="form-control"><span
                             class="help-block">Quando a resposta foi dada.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Se foi lido:</label><input
-                            type="text" maxlength="1" name="Lido" placeholder="Exemplo: s"
+                            type="text" required maxlength="1" name="Lido" placeholder="Exemplo: s"
                             class="form-control"><span
                             class="help-block">Se o recado foi lido (s/n):</span><br>
                 <span class="help-block">O 's' corresponde a um recado lido.</span><br>
                 <span class="help-block">O 'n' corresponde a um recado não lido.</span><br>
                 </div>
                 <div class="form-group"><label class="form-control-label">Comparecimento:</label><input
-                            type="text" maxlength="1" name="Comparece" placeholder="Exemplo: s"
+                            type="text" required maxlength="1" name="Comparece" placeholder="Exemplo: s"
                             class="form-control">
                     <span class="help-block">Se o encarregado comparece ou não (s/n/?/m):</span><br>
                     <span class="help-block">O 's' corresponde a foi preciso comparecer e comparece.</span><br>

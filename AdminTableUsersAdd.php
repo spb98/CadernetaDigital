@@ -70,24 +70,24 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Username:</label><input
-                            type="text" name="Username" placeholder="Exemplo: professor123123"
+                            type="text" required name="Username" placeholder="Exemplo: professor123123"
                             class="form-control"><span
                             class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Password:</label><input
-                            type="password" name="Password" placeholder="Exemplo: password123"
+                            type="password" required name="Password" placeholder="Exemplo: password123"
                             class="form-control"><span
                             class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Email:</label><input
-                            type="email" name="Email" placeholder="Exemplo: asdasd@gmail.com" class="form-control"><span
+                            type="email" required name="Email" placeholder="Exemplo: asdasd@gmail.com" class="form-control"><span
                             class="help-block"></span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Nível:</label><input
-                            type="number" name="Nivel" placeholder="Exemplo: 0" class="form-control"><span
+                            type="number" required name="Nivel" placeholder="Exemplo: 0" class="form-control"><span
                             class="help-block">Corresponde ao nível (0/1/2):</span><br>
                     <span class="help-block">O '0' corresponde ao nível de administrador.</span><br>
                     <span class="help-block">O '1' corresponde ao nível de professor.</span><br>

@@ -70,22 +70,22 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID da escola:</label><input
-                            type="number" name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdEscola" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a uma escola na base de dados</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID do professor:</label><input
-                            type="number" name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdProfessor" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um professor na base de dados</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Ano:</label><input
-                            type="number" name="Ano" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="Ano" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde ao ano da turma</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">Turma:</label><input
-                            type="text" maxlength="1" name="Turma" placeholder="Exemplo: A" class="form-control"><span
+                            type="text" required maxlength="1" name="Turma" placeholder="Exemplo: A" class="form-control"><span
                             class="help-block">Letra correspondente a uma turma</span></div>
             </div>
 

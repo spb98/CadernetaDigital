@@ -69,23 +69,23 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Designação da escola:</label><input
-                            type="text" maxlength="100" name="Designacao"
+                            type="text" required maxlength="100" name="Designacao"
                             placeholder="Exemplo: Escola Básica e Secundária da Batalha"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Localidade da escola:</label><input
-                            type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
+                            type="text" required maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Contacto da escola:</label><input
-                            type="number" name="Contacto" placeholder="Exemplo: XXXXXXXXX"
+                            type="number" required name="Contacto" placeholder="Exemplo: XXXXXXXXX"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Email da escola:</label><input
-                            type="email" maxlength="100" name="Email" placeholder="Exemplo: es3batalha@gmail.com"
+                            type="email" required maxlength="100" name="Email" placeholder="Exemplo: es3batalha@gmail.com"
                             class="form-control"><span
                             class="help-block"></span></div>
 

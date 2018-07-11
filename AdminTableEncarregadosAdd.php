@@ -70,26 +70,26 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do utilizador:</label><input
-                            type="number" name="IdUser" placeholder="Exemplo: 2" class="form-control"><span
+                            type="number" required name="IdUser" placeholder="Exemplo: 2" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um utilizador na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Nome do encarregado de educação:</label><input
-                            type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
+                            type="text"  required maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Sexo do encarregado de educação:</label><input
-                            type="text" maxlength="10" name="Sexo" placeholder="Exemplo: Rua da Ponte Nova"
+                            type="text" required maxlength="10" name="Sexo" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Morada do encarregado de educação:</label><input
-                            type="text" maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
+                            type="text" required maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Localidade do encarregado de educação:</label><input
-                            type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
+                            type="text" required maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
                             class="help-block"></span></div>
 

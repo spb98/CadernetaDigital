@@ -16,11 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //verificar as propriedades da imagem
 
     $check = getimagesize($_FILES["Foto"]["tmp_name"]);
-    if (filesize ($_FILES["Foto"]["tmp_name"]) > 150000 ){
-        echo "File muito grande....<br><br>";
-        //$_SESSION['ActionTaken'] = 'FILE';
-        header("location: AdminTableAlunos.php");
-    } elseif ($check !== false) {
+    if ($check !== false) {
         $_SESSION['ActionTaken'] = 'AcaoNula';
         $image = $_FILES['Foto']['tmp_name'];
         $foto = addslashes(file_get_contents($image));

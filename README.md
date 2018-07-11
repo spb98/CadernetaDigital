@@ -9,6 +9,12 @@ Abaixo encontra-se a lista de erros ou características em falta no projeto.
 
 Abaixo encontra-se a lista de mudaças feitas no projeto.
 
+>Versão 0.97 Full
+> - Conteudos:
+>   - Arranjado o envio e edição de imagens.
+>   - Foi posto o "required" nos inputs.
+>   - Mudado o design do butão editar nos administradores.
+
 >Versão 0.96.1 Full
 > - Conteudos:
 >   - Arranjado o modal dos encarregados de educação.

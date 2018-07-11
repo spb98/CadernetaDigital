@@ -71,45 +71,45 @@ if (isset($_SESSION["loginError"]) || $_SESSION["LoggedNivel"] != '0') {
                             class="help-block">Valor é inserido automaticamente pela base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">ID do Encarregado:</label><input
-                            type="number" name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdEncarregado" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a um Encarregado de Educação na base de dados.</span>
                 </div>
 
                 <div class="form-group"><label class="form-control-label">ID da Turma:</label><input
-                            type="number" name="IdTurma" placeholder="Exemplo: 1" class="form-control"><span
+                            type="number" required name="IdTurma" placeholder="Exemplo: 1" class="form-control"><span
                             class="help-block">Valor númerico que corresponde a uma turma na base de dados.</span></div>
 
                 <div class="form-group"><label class="form-control-label">Nome do aluno:</label><input
-                            type="text" maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
+                            type="text" required maxlength="100" name="Nome" placeholder="Exemplo: João Jacinto"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Morada do aluno:</label><input
-                            type="text" maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
+                            type="text" required maxlength="100" name="Morada" placeholder="Exemplo: Rua da Ponte Nova"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Localidade do aluno:</label><input
-                            type="text" maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
+                            type="text" required maxlength="100" name="Localidade" placeholder="Exemplo: Batalha"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Cartão de Cidadão do aluno:</label><input
-                            type="text" maxlength="20" name="CC" placeholder="Exemplo: XXXXXXXX XXXX"
+                            type="text" required maxlength="20" name="CC" placeholder="Exemplo: XXXXXXXX XXXX"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Sexo do aluno:</label><input
-                            type="text" maxlength="10" name="Sexo" placeholder="Exemplo: Masculino"
+                            type="text" required maxlength="10" name="Sexo" placeholder="Exemplo: Masculino"
                             class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label class="form-control-label">Data de nascimento do aluno:</label><input
-                            type="date" name="DataNascimento" class="form-control"><span
+                            type="date" required name="DataNascimento" class="form-control"><span
                             class="help-block"></span></div>
 
                 <div class="form-group"><label for="file-input" class=" form-control-label">Foto do aluno:</label>
-                    <input type="file" id="file-input" ng-model="image" accept="image/*" name="Foto" class="form-control-file">
+                    <input type="file" required id="file-input" ng-model="image" accept="image/*" name="Foto" class="form-control-file">
                     <span class="help-block"></span></div>
             </div>
 
